@@ -1,0 +1,28 @@
+# Obsidian personal workspace/UI state
+.obsidian/workspace.json
+.obsidian/appearance.json
+.obsidian/graph.json
+
+# Obsidian caches and generated state
+.obsidian/cache/
+.obsidian/backlink-cache.json
+.obsidian/search.json
+.obsidian/workspaces.json
+
+# Optional: keep plugin list, ignore downloaded plugin code
+.obsidian/plugins/**
+!.obsidian/plugins/
+!.obsidian/plugins/**/
+!.obsidian/plugins/**/manifest.json
+!.obsidian/plugins/**/data.json
+!.obsidian/community-plugins.json
+!.obsidian/core-plugins.json
+!.obsidian/app.json
+
+# Temporary note locations
+**/Temp/*.md
+
+# System/editor files
+.DS_Store
+Thumbs.db
+*.swp
