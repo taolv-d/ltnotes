@@ -40,7 +40,7 @@ PMRID 的网络结构就是“RAW 4通道输入 + ISO噪声归一化 + 轻量残
 
 - **基础框架**：4层编码器+4层解码器的 **U-Net** 结构。
     
-- **计算瘦身**：大量使用**深度可分离卷积**[[../../machine learning/nn积木/DSC|DSC]]，只在输入输出层用普通卷积。
+- **计算瘦身**：大量使用**深度可分离卷积**[[../../machine learning/nn积木/DSC 深度可分离卷积|DSC 深度可分离卷积]]，只在输入输出层用普通卷积。
     
 
 先说输入。原始 Bayer 图先被打包成 RGGB 四通道，原来单通道 H x W 的 Bayer，会变成 4 x (H/2) x (W/2)。这样做的好处是既保留 RAW 的马赛克结构信息，又把空间尺寸减半，计算量更适合移动端。推理前还会做一次基于 ISO 的噪声归一化 KSigma，把不同 ISO 的噪声分布拉到一个统一参考域里，再乘上 256 送入网络。
@@ -70,7 +70,7 @@ PMRID 的网络结构就是“RAW 4通道输入 + ISO噪声归一化 + 轻量残
 - dec4: 16 x H x W
 - 输出: 4 x H x W
 
-它的每个编码块和解码块都很“移动端友好”。关键点是大量使用了 depthwise separable convolution[[../../machine learning/nn积木/DSC|DSC]]，也就是深度可分离卷积。EncoderBlock 里是两层 5x5 可分离卷积加残差支路；DecoderBlock 里是两层 3x3 可分离卷积加残差。整个网络没有 BatchNorm、没有 attention、没有 transformer，设计目标非常明确：在 RAW 域做有效降噪，同时尽量省算力、省参数。
+它的每个编码块和解码块都很“移动端友好”。关键点是大量使用了 depthwise separable convolution[[../../machine learning/nn积木/DSC 深度可分离卷积|DSC 深度可分离卷积]]，也就是深度可分离卷积。EncoderBlock 里是两层 5x5 可分离卷积加残差支路；DecoderBlock 里是两层 3x3 可分离卷积加残差。整个网络没有 BatchNorm、没有 attention、没有 transformer，设计目标非常明确：在 RAW 域做有效降噪，同时尽量省算力、省参数。
 
 还有两个很值得注意的实现细节：
 
