@@ -1,3 +1,4 @@
+
 [megvii-research/NAFNet: The state-of-the-art image restoration model without nonlinear activation functions.](https://github.com/megvii-research/NAFNet?utm_source=chatgpt.com)
 
 NAFNet 本质上是一个很干净的 U-Net 式图像复原网络。它的整体思路可以概括成：
@@ -22,71 +23,91 @@ NAFNet 本质上是一个很干净的 U-Net 式图像复原网络。它的整体
 - `ending`：映射回输出通道
 - 最后 `x = x + inp`：这是图像复原里很常见的全局残差
 
-如果看默认的 SIDD 配置 [NAFNet-width64.yml](/home/lvtao/code/NAFNet/NAFNet-main/options/train/SIDD/NAFNet-width64.yml:45)，参数是：
+##  NAF block
+真正有特点的是它的基本单元 `NAFBlock`。这个 block 的设计可以理解成“极简版 Transformer/Conv block”，但完全用卷积实现，没有常规激活函数。前半段是**局部混合 + 简化通道注意力**
 
-- `width: 64`
-- `enc_blk_nums: [2, 2, 4, 8]`
-- `middle_blk_num: 12`
-- `dec_blk_nums: [2, 2, 2, 2]`
 
-这意味着特征尺度大致是：
-
-```text
-3
--> 64
--> 64  (2个 NAFBlock)
--> 128 (down)
--> 128 (2个 NAFBlock)
--> 256 (down)
--> 256 (4个 NAFBlock)
--> 512 (down)
--> 512 (8个 NAFBlock)
--> 1024 (down)
--> 1024 (12个 NAFBlock, middle)
--> 512 (up + skip + 2个 NAFBlock)
--> 256 (up + skip + 2个 NAFBlock)
--> 128 (up + skip + 2个 NAFBlock)
--> 64  (up + skip + 2个 NAFBlock)
--> 3
 ```
-
-真正有特点的是它的基本单元 `NAFBlock`，定义在 [NAFNet_arch.py:27](/home/lvtao/code/NAFNet/NAFNet-main/basicsr/models/archs/NAFNet_arch.py:27)。这个 block 的设计可以理解成“极简版 Transformer/Conv block”，但完全用卷积实现，没有常规激活函数。前半段是局部混合 + 简化通道注意力：
-
-```text
-LN
--> 1x1 conv            # 通道扩张，c -> DW_Expand*c
--> 3x3 depthwise conv  # 空间建模
--> SimpleGate          # 通道一分为二再逐元素相乘
--> SCA                 # 简化通道注意力
--> 1x1 conv            # 投影回 c
--> 残差1（乘 beta）
-```
-
-后半段是一个简化 FFN[[../nn积木/FFN|FFN]]：
-
-```text
-LN
--> 1x1 conv            # FFN 扩张，c -> FFN_Expand*c
--> SimpleGate
--> 1x1 conv            # 回到 c
--> 残差2（乘 gamma）
+输入特征 x (B, C, H, W)
+  │
+  ├─ 残差分支：直接跳接到最后
+  │
+  └─ 主分支：
+       ↓
+      LayerNorm（归一化）
+       ↓
+      1×1 Conv（通道扩展，C → C×α，通常 α=2 或 2.66）
+       ↓
+      3×3 Depthwise Conv（空间特征提取，通道数不变）
+       ↓
+      SimpleGate（关键创新）
+        │
+        ├─ 沿通道拆成两份：x1, x2 = chunck(2)
+        └─ 输出 = x1 ⊙ x2（逐元素相乘）
+       ↓
+      SCA（简化通道注意力）
+        │
+        ├─ 全局平均池化：(1, C, 1, 1)
+        ├─ 1×1 Conv（降维再升维，带激活）
+        └─ Sigmoid → 再乘回输入
+       ↓
+      1×1 Conv（通道投影，C → 原C）
+       ↓
+      + 跳接（残差相加）
+  │
+  ↓
+输出 y (B, C, H, W)
 ```
 
 几个关键点：
 
-- `SimpleGate` 在 [NAFNet_arch.py:22](/home/lvtao/code/NAFNet/NAFNet-main/basicsr/models/archs/NAFNet_arch.py:22)，不是 ReLU/GELU，而是把通道一分为二后相乘：`x1 * x2`
-- `sca` 在 [NAFNet_arch.py:36](/home/lvtao/code/NAFNet/NAFNet-main/basicsr/models/archs/NAFNet_arch.py:36)，是 `AdaptiveAvgPool2d(1) + 1x1 conv`，比 SE 更轻
-- 两个残差缩放参数 `beta` 和 `gamma` 在 [NAFNet_arch.py:56](/home/lvtao/code/NAFNet/NAFNet-main/basicsr/models/archs/NAFNet_arch.py:56) 初始化为 0，这让网络一开始更接近恒等映射，训练会更稳
-- `LayerNorm2d` 在 [arch_util.py:291](/home/lvtao/code/NAFNet/NAFNet-main/basicsr/models/archs/arch_util.py:291)，它是对每个空间位置沿通道维做归一化，不是 BatchNorm
+- `SimpleGate`不是 ReLU/GELU，而是把通道一分为二后相乘：`x1 * x2`
+- `sca`是 `AdaptiveAvgPool2d(1) + 1x1 conv`，比 SE 更轻
+- 两个残差缩放参数 `beta` 和 `gamma` 初始化为 0，这让网络一开始更接近恒等映射，训练会更稳
+- `LayerNorm2d` 是对每个空间位置沿通道维做归一化，不是 BatchNorm
 
-所以 NAFNet 这个名字里的 “NAF” 通常可以理解为 “非线性激活被极简化了”。你可以对比一下仓库里的 baseline 实现 [Baseline_arch.py](/home/lvtao/code/NAFNet/NAFNet-main/basicsr/models/archs/Baseline_arch.py:22)：
 
-- Baseline 用的是 `GELU + SE`
-- NAFBlock 用的是 `SimpleGate + Simplified Channel Attention`
 
-也就是说，NAFNet 的创新不在“更复杂”，而在“更少组件但效果很强”。
+## SCA（Simplified Channel Attention)
 
-再补两个代码层面的细节：
+SCA 是一种简化注意力机制的方法，但是后续的算法复用的不多
 
-- 输入尺寸会先 pad 到 `2 ** 编码层数` 的倍数，见 [NAFNet_arch.py:157](/home/lvtao/code/NAFNet/NAFNet-main/basicsr/models/archs/NAFNet_arch.py:157)，这样多次下采样不会出尺寸问题
-- `NAFNetLocal` 在 [NAFNet_arch.py:164](/home/lvtao/code/NAFNet/NAFNet-main/basicsr/models/archs/NAFNet_arch.py:164)，会把全局池化替换成更适合大图推理的局部实现，相关逻辑在 [local_arch.py](/home/lvtao/code/NAFNet/NAFNet-main/basicsr/models/archs/local_arch.py:78)
+## # 传统通道注意力（如 SENet）的完整流程：
+```
+输入特征 (B, C, H, W)
+  ↓
+全局平均池化 (B, C, 1, 1)
+  ↓
+全连接层1（降维，C → C/r，r=16）
+  ↓
+ReLU 激活
+  ↓
+全连接层2（升维，C/r → C）
+  ↓
+Sigmoid 激活 → 得到通道权重 (B, C, 1, 1)
+  ↓
+逐通道乘回原特征
+```
+
+###  SCA 的简化流程：
+```
+输入特征 (B, C, H, W)
+  ↓
+全局平均池化 (B, C, 1, 1)
+  ↓
+1×1 卷积（C → C，注意：**不降维**）
+  ↓
+Sigmoid 激活 → 得到通道权重 (B, C, 1, 1)
+  ↓
+逐通道乘回原特征
+```
+
+## 两者的关键区别：
+
+| 对比项 | 传统通道注意力 | SCA（简化版） |
+|--------|---------------|---------------|
+| 降维操作 | 有（C→C/r→C） | **无** |
+| 全连接层 | 2个 | **0个**（用1×1卷积代替） |
+| 激活函数 | ReLU + Sigmoid | **仅Sigmoid** |
+| 参数量 | 较多（2个FC层） | **极少（1个卷积层）** |
+| 跨通道交互 | 通过降维实现 | **直接学习每个通道权重** |
