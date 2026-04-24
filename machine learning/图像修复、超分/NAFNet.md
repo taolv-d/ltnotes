@@ -1,4 +1,6 @@
-NAFNet 在这份代码里，本质上是一个很干净的 U-Net 式图像复原网络，核心实现就在 [NAFNet_arch.py](/home/lvtao/code/NAFNet/NAFNet-main/basicsr/models/archs/NAFNet_arch.py:27)。它的整体思路可以概括成：
+[megvii-research/NAFNet: The state-of-the-art image restoration model without nonlinear activation functions.](https://github.com/megvii-research/NAFNet?utm_source=chatgpt.com)
+
+NAFNet 本质上是一个很干净的 U-Net 式图像复原网络。它的整体思路可以概括成：
 
 ```text
 输入图像
@@ -10,8 +12,6 @@ NAFNet 在这份代码里，本质上是一个很干净的 U-Net 式图像复原
   -> 与输入做全局残差相加
   -> 输出图像
 ```
-
-对应代码在 [NAFNet_arch.py:83](/home/lvtao/code/NAFNet/NAFNet-main/basicsr/models/archs/NAFNet_arch.py:83) 到 [NAFNet_arch.py:155](/home/lvtao/code/NAFNet/NAFNet-main/basicsr/models/archs/NAFNet_arch.py:155) 很直接：
 
 - `intro`：把输入 `img_channel` 映射到基础通道数 `width`
 - `encoders`：每个尺度堆若干个 `NAFBlock`
@@ -62,7 +62,7 @@ LN
 -> 残差1（乘 beta）
 ```
 
-后半段是一个简化 FFN：
+后半段是一个简化 FFN[[../nn积木/FFN|FFN]]：
 
 ```text
 LN
