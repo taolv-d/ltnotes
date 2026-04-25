@@ -1,4 +1,11 @@
-SE 全称是 **Squeeze-and-Excitation**。
+SE 全称是 **Squeeze-and-Excitation**
+- 网络自己判断哪些通道重要
+- 重要通道放大
+- 不重要通道压低
+
+[1709.01507](https://arxiv.org/pdf/1709.01507)
+
+![[attachments/Pasted image 20260425174458.png]]
 
 假设输入是：`H x W x C`
 
@@ -22,8 +29,5 @@ SE 做这几步：
 6. 原特征逐通道乘权重
 
 ```
-直观理解：
 
-- 网络自己判断哪些通道重要
-- 重要通道放大
-- 不重要通道压低
+
