@@ -7,7 +7,7 @@
 
 
 
-### **A Review of Recent Advances in High-Dynamic-Range CMOS Image Sensors**
+# 2025 A Review of Recent Advances in High-Dynamic-Range CMOS Image Sensors
 本文回顾了 2019~2025的HDR技术
 
 
