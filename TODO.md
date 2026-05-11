@@ -1,5 +1,6 @@
+- [ ] machine learning 中的很多 文件跟 image&camera 分类是重复的。
 - [ ] ISPDiffuser
 - [ ] RAW-Diffusion: RGB-Guided Diffusion Models for High-Fidelity RAW Image Generation sony 的生成raw图像的网络
 - [x] yolo 模型结构
-- [ ] NAFNet
+- [x] NAFNet
 - [ ] SUPIR 图像修复大模型
