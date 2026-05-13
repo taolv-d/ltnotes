@@ -184,7 +184,7 @@
 
 无监督场景下的应用方式：
 
-- **Noise2Noise 思路**：用同一场景下两次独立曝光的噪声图互作真值，即使不知道干净图是啥，L2损失的期望最小值也等于干净信号。[[../image&camera/denoise/2018 Noise2Noise|2018 Noise2Noise]]
+- **Noise2Noise 思路**：用同一场景下两次独立曝光的噪声图互作真值，即使不知道干净图是啥，L2损失的期望最小值也等于干净信号。[[../camera/denoise/2018 Noise2Noise NVIDIA|2018 Noise2Noise]]
 
 ### 数据一致性损失
 

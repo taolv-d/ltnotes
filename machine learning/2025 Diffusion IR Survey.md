@@ -1,6 +1,6 @@
 原文：Diffusion Models for Image Restoration and Enhancement: A Comprehensive Survey
 
-![[attachments/Pasted image 20260512161241.png]]
+![[nn积木/attachments/Pasted image 20260512161241.png]]
 
 
 这篇综述《Diffusion Models for Image Restoration and Enhancement: A Comprehensive Survey》是图像复原领域非常重要的一篇文献，由中科大等机构的研究者完成。它首次全面、系统地梳理了扩散模型在图像复原与增强领域的应用，对理解和进入这个领域有很大帮助。

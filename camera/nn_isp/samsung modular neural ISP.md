@@ -25,7 +25,7 @@ DNG 进来以后会先做最基本的 sensor 域处理：
 这里仓库没有把“demosaic”学进去，而是把它当成输入准备的一部分。进入主网络时，raw 已经是 3 通道线性 raw RGB 了，不是 Bayer mosaic 了。
 
 **3. raw denoising** 
-[[../../machine learning/rgb_增强网络/NAFNet|NAFNet]]
+[[../../machine learning/图像修复、超分/2022 NAFNet Megvii|NAFNet]]
 进入 PipeLine.forward (line 739) 后，第一段主干是 raw 去噪：
 
 - S24 相机可走 camera-specific denoiser

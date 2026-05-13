@@ -195,7 +195,7 @@ $$
 
 ###  退火近似：从 L2 到 L0
 
-[[../../image&camera/denoise/2018 Noise2Noise|2018 Noise2Noise]]使用了一个 **退火 L0 近似**：
+[[../../camera/denoise/2018 Noise2Noise NVIDIA|2018 Noise2Noise]]使用了一个 **退火 L0 近似**：
 
 $$
 L_{annealed}(z,y)=(|z-y|+\varepsilon)^\gamma

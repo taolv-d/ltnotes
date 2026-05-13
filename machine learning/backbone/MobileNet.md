@@ -27,7 +27,7 @@
 - conv_ds_12：stride 16
 - conv_ds_14：stride 32，语义最强
 
-其中 conv_ds_xx 结构如下：DepthwiseConv: [[nn积木/DSC 深度可分离卷积|DSC 深度可分离卷积]]
+其中 conv_ds_xx 结构如下：DepthwiseConv: [[../nn积木/DSC 深度可分离卷积|DSC 深度可分离卷积]]
 ```
 DepthwiseConv 3x3 
 → BatchNorm
@@ -114,9 +114,9 @@ V3 的典型 block 是：
 其中 activation 可能是：
 
 - ReLU
-- h-swish [[nn积木/激活函数汇总|激活函数汇总]]
+- h-swish [[../nn积木/激活函数汇总|激活函数汇总]]
 
-SE 不是每个 block 都有，是部分 block 有。[[nn积木/SE 通道注意力|SE 通道注意力]]
+SE 不是每个 block 都有，是部分 block 有。[[../nn积木/SE 通道注意力|SE 通道注意力]]
 
 ---
 
