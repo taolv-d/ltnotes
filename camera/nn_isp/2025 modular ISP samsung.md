@@ -1,4 +1,8 @@
-## 这个仓库把传统 ISP 拆成几段“可学习但可控”的模块
+[[../../TODO|TODO]]
+Modular Neural Image Signal Processing
+
+
+这个仓库把传统 ISP 拆成几段“可学习但可控”的模块
 
 输入读取 -> raw 预处理 -> raw denoising -> AWB/CCM color correction -> linear sRGB -> photofinishing -> guided upsampling -> enhancement -> sharpening -> JPEG保存/可选raw回嵌
 

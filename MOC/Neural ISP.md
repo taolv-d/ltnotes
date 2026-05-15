@@ -4,9 +4,9 @@
 
 ## 综述与方法
 
-- [[../camera/nn_isp/review|review]]
+- [[../camera/nn_isp/2023 nn ISP Survey|2023 nn ISP Survey]]
 - [[../camera/nn_isp/2025 CANS|2025 CANS]]
-- [[../camera/nn_isp/samsung modular neural ISP|samsung modular neural ISP]]
+- [[../camera/nn_isp/2025 modular ISP samsung|2025 modular ISP samsung]]
 - [[../camera/nn_isp/2025 MLLM ISP Tuning|2025 MLLM ISP Tuning]]
 
 ## 上下游
