@@ -7,7 +7,6 @@
 常见边界：
 - `ISP`：传统 ISP 模块、3A、标定、调试策略。
 - `denoise`：噪声模型、去噪训练范式、RGB/RAW 去噪问题。
-- `raw_denoise`：RAW 域噪声、VST、k-sigma、YOND、PMRID 等。
 - `low_light`：曝光不足、可见性增强、Retinex、夜间感知任务。
 - `nn_isp`：learned ISP、neural ISP、相机链路里的网络化模块。
 - `restoration`：和相机/RAW/多帧成像强相关的复原、超分、视频质量增强。
