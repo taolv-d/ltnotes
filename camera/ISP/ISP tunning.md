@@ -1,7 +1,6 @@
 # 1 RAW
 
-DCRAW 源码 [[../../TODO|TODO]]
-
+DCRAW 源码 [[../../TODO|TODO]] 本文作为一个ISP tunning + 算法 串起来的文档
 # 2 ISP turning 原则
 ## 审美型
 **标准：** ISO CIPA CPIQ
@@ -88,6 +87,9 @@ AF key position
 gamma 一般分两段：
 E709=4.5* L (L<0.018); 1.099 * L^0.45 - 0.099 (0.018 < L)  
 # 10 AE
+
+[[AE tuning]]
+
 **曝光：**
 光的角度：Exposure Value(EV) = lux * sec
 camra角度：EV=ISO * shutter * F#

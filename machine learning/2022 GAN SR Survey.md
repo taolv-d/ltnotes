@@ -12,7 +12,7 @@
 # 训练范式
 
 本文提到的三种训练范式如今已有有比较广泛的应用，参考
-- [[2025 Low-Light Vision Survey]] 
+- [[low_light/2025 Low-Light Vision Survey]] 
 - [[2025 Video Quality Improvement Survey]]
 
 **监督式**：
