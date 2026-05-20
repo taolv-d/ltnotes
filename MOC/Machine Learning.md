@@ -22,4 +22,4 @@
 ## 量化
 
 - [[../machine learning/量化心得/量化扫盲|量化扫盲]]
-- [[../machine learning/量化心得/concat|concat]]
+- [[../machine learning/量化心得/精度问题汇总|精度问题汇总]]
