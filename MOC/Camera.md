@@ -4,6 +4,7 @@
 
 ## 成像硬件与基础
 
+- [[../camera/sensor/CMOS image sensor（CIS）|CMOS image sensor（CIS）]]
 - [[../camera/光学成像系统|光学成像系统]]
 - [[../camera/数码相机中的图像传感器和信号处理|数码相机中的图像传感器和信号处理]]
 - [[../camera/light/坎德拉、流明、勒克斯？|坎德拉、流明、勒克斯？]]
@@ -11,13 +12,18 @@
 - [[../camera/sensor/芝加哥大学：Noise DR Bit Depth in Digital SLRs|芝加哥大学：Noise DR Bit Depth in Digital SLRs]]
 - [[../camera/TOF/TOF 总结|TOF 总结]]
 - [[../camera/TOF/dtof|dtof]]
+- [[../camera/sensor/ADC in sensor|ADC in sensor]]
 
 ## ISP 与 3A
 
+- [[../camera/ISP/ISP速览|ISP速览]]
+- [[../camera/ISP/ISP pipline 对比|ISP pipline 对比]]
 - [[../camera/ISP/ISP tunning|ISP tunning]]
+- [[../camera/ISP/ISP tunning 前确认项|ISP tunning 前确认项]]
 - [[../camera/ISP/2025 MLLM ISP Tuning|2025 MLLM ISP Tuning]]
 - [[../camera/ISP/【读书笔记】Single Sensor Imaging Methods and Applications for Digital Cameras Image Processing Series|Single Sensor Imaging Methods and Applications for Digital Cameras]]
 - [[../camera/AF/PDAF|PDAF]]
+- [[../camera/ISP/AWB calibration|AWB calibration]]
 
 ## 色彩
 
@@ -37,12 +43,12 @@
 - [[../machine learning/low_light/2025 Low-Light Vision Survey|2025 Low-Light Vision Survey]]
 - [[../machine learning/low_light/Retinex|Retinex]]
 
-## 学习型相机算法
+## 降噪算法
+
+[[../camera/denoise/2007 BM3D NLM|2007 BM3D NLM]]
+
+## NN ISP
 
 - [[../camera/nn_isp/2023 nn ISP Survey|2023 nn ISP Survey]]
 - [[../camera/nn_isp/2025 CANS|2025 CANS]]
 - [[../camera/nn_isp/2025 modular ISP samsung|2025 modular ISP samsung]]
-
-## 相关机器学习入口
-
-- [[Machine Learning]]

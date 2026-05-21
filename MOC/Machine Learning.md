@@ -48,9 +48,6 @@
 - [[../machine learning/2022 GAN SR Survey|2022 GAN SR Survey]]
 - [[../machine learning/2025 Video Quality Improvement Survey|2025 Video Quality Improvement Survey]]
 
-## 相机相关交叉入口
-
-- [[Camera]]
 
 ## 量化
 

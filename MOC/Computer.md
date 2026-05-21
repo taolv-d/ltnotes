@@ -18,3 +18,4 @@
 - [[../computer/os/操作系统导论|操作系统导论]]
 - [[../computer/os/glibc malloc 理解|glibc malloc 理解]]
 - [[i.mx6ull learn]]
+- [[../computer/code/C 陷阱与缺陷|C 陷阱与缺陷]]
