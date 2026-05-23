@@ -1,6 +1,6 @@
 # 1 RAW
 
-DCRAW 源码 [[../../TODO|TODO]] 本文作为一个ISP tunning + 算法 串起来的文档
+ [[../../TODO|TODO]] 本文作为一个ISP tunning + 算法 串起来的文档
 # 2 ISP turning 原则
 ## 审美型
 **标准：** ISO CIPA CPIQ
