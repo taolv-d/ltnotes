@@ -56,7 +56,7 @@ LSC 的差异：
 # 5 相机的标定
 **需要标定的内容**
 black level
-LSC
+LSC [[LSC]]
 static DPC （坏点）
 white blance
 CCM
@@ -163,6 +163,10 @@ Exposure convergence 收敛速度（vs 稳定性）
 	6、bypass 所有影响颜色的模块
 	7、AWB initial calibration 完成
 	8、AWB 统计完成
+
+## AWB 标定
+
+[[AWB calibration]]
 
 # 12AF
 

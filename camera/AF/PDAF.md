@@ -12,3 +12,10 @@
 
 # CRA 对PDAF的影响
 
+![[attachments/Pasted image 20260522125807.png]]
+https://arxiv.org/html/2510.27662
+
+
+![[attachments/Pasted image 20260522125958.png]]
+
+![[attachments/Pasted image 20260522130051.png]]
