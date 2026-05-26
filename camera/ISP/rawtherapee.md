@@ -1,16 +1,14 @@
 # 前处理模块
 
-## 2. 主要流程
-
-`RawImageSource::preprocess()` 的顺序大致是：
+大致顺序：
 
 ```text
 1. 计算 preprocess WB / scale_mul 参考
-2. 查找 dark frame
+2. 查找 dark frame (主要处理暗电流，长曝光热噪声)
 3. 标记 zero bad pixels
-4. 查找 flat field
+4. 查找 flat field （镜头暗角校正、传感器响应不均匀校正、灰尘阴影校正、通道响应校正）
 5. copyOriginalPixels(): 复制 RAW、扣 dark、应用 flat field
-6. DNG gain map
+6. DNG gain map（类似LSC的作用）
 7. 静态 badpixels 文件
 8. dark frame hot pixels
 9. scaleColors(): black / white / WB raw scale
@@ -24,80 +22,36 @@
 17. 为 denoise 计算 auto exposure histogram
 ```
 
-这个顺序很重要：坏点先标记，绿平衡和 PDAF 可以继续添加坏点或修正 RAW，最后统一插值修复，再进行行噪声和 CA。
-
-## 4. Dark frame
-
-```text
-减暗电流
-抑制长曝光热噪声
-提供 hot pixel map
-```
-
-## 5. Flat field / LSC / Dust correction
-
-```text
-镜头暗角校正
-传感器响应不均匀校正
-灰尘阴影校正
-通道响应校正
-```
-
-从 ISP 角度看，它接近 lens shading correction，但数据来自用户 flat field 或元数据，而不是相机 ISP 标定表。
-
-## 6. DNG gain map
-
-如果 RAW 文件中有 DNG gain map，并且 `raw.ff_FromMetaData` 启用，RawTherapee 会把 gain map 应用到 RAW 数据上。
-
-这部分比通用 flat field 更接近 DNG 标准里的 LSC/gain compensation。
-
-## 7. DPC：坏点、热坏点、死点
+## DPC：坏点、热坏点、死点
 
 ```text
 1. detection / marking：把坏点坐标写入 PixelsMap
 2. correction：根据 sensor pattern 选择插值函数统一修复
 ```
 
-### 7.2 坏点来源
+### 坏点来源
 
-RawTherapee 的坏点来源有五类。
+RawTherapee 的坏点来源有五类：
 
-第一类是 zero pixels：
-
-算法很直接：扫描 `ri->data`，凡是原始值等于 0 的像素，都写入 `PixelsMap`。这类点主要来自某些相机/RAW 格式中用 0 表示无效像素或 DNG opcode 里的 fixed bad pixel constant。
-
-第二类是 `.badpixels` 静态坏点表：
-
-这类坏点表适合修正固定传感器缺陷。
-
-第三类是 dark frame 提取的 hot pixels：
-
-提取逻辑是：
-
+1. zero pixels：
+	扫描 `ri->data`，凡是原始值等于 0 的像素，都写入 `PixelsMap`。这类点主要来自某些相机/RAW 格式中用 0 表示无效像素或 DNG opcode 里的 fixed bad pixel constant。
+2. `.badpixels` 静态坏点表
+3.  dark frame 提取的 hot pixels：
 ```text
 m = 周围 8 个同 CFA 相位邻居之和
 if center > m * (10 / 8):
     标记为 hot pixel
 ```
 
-这里的 8 个邻居是同色采样位置：
-
-```text
-(row-2,col-2) (row-2,col) (row-2,col+2)
-(row,  col-2)               (row,  col+2)
-(row+2,col-2) (row+2,col) (row+2,col+2)
-```
-
-第四类是主图动态 hot/dead pixel 检测：
-
-第五类是 PDAF line 标记， PDAF 异常点也写入同一个 `PixelsMap`，最后复用 DPC 插值。
+4. 主图动态 hot/dead pixel 检测（算法在后面介绍）
+5. PDAF line 标记， PDAF 异常点也写入同一个 `PixelsMap`，最后复用 DPC 插值。
 
 显然这里不能检测大面积坏点簇
-### 7.3 动态 hot/dead 检测算法
+### 动态 hot/dead 检测算法
 
-`findHotDeadPixels()` 的核心思想是：先在同 CFA 相位邻域上构造一个局部“正常值”估计，再看中心像素相对这个估计是否是局部离群点。它来自 Emil Martinec 的思路，代码里做了 OpenMP 和 SSE 优化。
+先在同 CFA 相位邻域上构造一个局部“正常值”估计，再看中心像素相对这个估计是否是局部离群点。它来自 Emil Martinec 的思路，代码里做了 OpenMP 和 SSE 优化。
 
-第一步，对每个候选像素 `(i, j)`，在同色 3x3 采样网格上取中值：
+第一步，对每个候选像素 `(i, j)`，在同色 3x3 采样网格上取中值（CFA上相同颜色）：
 
 ```text
 median(
@@ -107,24 +61,11 @@ median(
 )
 ```
 
-这个 3x3 不是连续 3x3，而是步长为 2 的同 CFA 相位窗口。这样检测只比较同色像素，不会把 R/G/B 响应差异误判成坏点。
-
 第二步，计算中心像素相对中值的残差：
 
 ```text
 cfablur[i][j] = rawData[i][j] - median_same_color_3x3(i, j)
-```
 
-如果只检测 hot pixel，就忽略负残差；如果只检测 dead pixel，就忽略正残差：
-
-```text
-if !findDeadPixels && pixdev <= 0: continue
-if !findHotPixels  && pixdev >= 0: continue
-```
-
-因此：
-
-```text
 pixdev > 0：中心比同色局部中值亮，候选 hot pixel
 pixdev < 0：中心比同色局部中值暗，候选 dead pixel
 ```
@@ -134,13 +75,6 @@ pixdev < 0：中心比同色局部中值暗，候选 dead pixel
 ```text
 pixdev_abs = abs(cfablur[i][j])
 hfnbrave = sum(abs(cfablur[5x5 around i,j])) - pixdev_abs
-```
-
-代码里实现为：
-
-```text
-hfnbrave = -pixdev_abs
-sum5x5(cfablur, cc - 2, hfnbrave)
 ```
 
 也就是先减掉中心残差，再累加周围 5x5 残差绝对值，得到“邻域其它残差总量”。如果周围本来就是强边缘/强纹理，`hfnbrave` 会变大，检测阈值随之提高；如果周围很平坦，轻微孤立异常也更容易被抓到。
@@ -158,41 +92,24 @@ if abs(center_residual) > varthresh * neighbor_residual_sum:
     bpMap.set(j, i)
 ```
 
-这个判据的含义是：中心残差必须相对邻域其它残差总和足够突出，才算坏点。它不是单纯的固定亮度阈值，所以对曝光、ISO、局部纹理有一定自适应能力。
+这个判据的含义是：中心残差必须相对邻域其它残差总和足够突出，才算坏点。不是固定亮度阈值。
 
-边界处理上，动态检测只处理：
+边界处理上，边缘 2 像素不参与动态检测。
 
-```text
-row: 2 .. H-3
-col: 2 .. W-3
-```
+### Bayer 插值算法
 
-因为它需要同色 3x3 和残差 5x5 邻域。边缘 2 像素不参与动态检测。
+“同色、成对、梯度加权”的插值。
 
-### 7.4 Bayer 插值算法
-
-`interpolateBadPixelsBayer()` 的核心不是简单均值，而是“同色、成对、梯度加权”的插值。
-
-对每个被 `PixelsMap` 标记的坏点，先跳过边界 2 像素，只处理：
-
-```text
-row: 2 .. H-3
-col: 2 .. W-3
-```
-
-然后只使用同 CFA 相位的有效邻居。每个候选方向都取一对位于坏点两侧的像素，如果这对像素中任意一个也被标记为坏点，该方向直接不用。
+每个候选方向都取一对位于坏点两侧的像素，如果这对像素中任意一个也被标记为坏点，该方向直接不用。
 
 对绿色坏点，额外使用两个近对角方向：
 
 ```text
 (row-1, col-1) + (row+1, col+1)
 (row-1, col+1) + (row+1, col-1)
-```
 
-距离权重是：
-
-```text
-0.70710678 = 1 / sqrt(2)
+距离权重：
+weight = 0.70710678 = 1 / sqrt(2)
 ```
 
 对红/蓝坏点，对角同色点更远，使用：
@@ -200,12 +117,9 @@ col: 2 .. W-3
 ```text
 (row-2, col-2) + (row+2, col+2)
 (row-2, col+2) + (row+2, col-2)
-```
 
-距离权重是：
-
-```text
-0.35355339 = 1 / sqrt(8)
+距离权重：
+weight = 0.35355339 = 1 / sqrt(8)
 ```
 
 所有通道都会再尝试水平和垂直同色方向：
