@@ -311,98 +311,76 @@ new_g = 0.5 * (gin + ginterp)
 
 
 
-## 10. CFA line denoise
+## CFA line denoise
 
-相关文件：
+对raw图分通道做频域变换，在频域抑制周期性噪声。
 
-```text
-cfa_linedn_RT.cc
-```
-
-入口：
+**算法目的**
+CFA line denoise 处理的是 RAW CFA 上沿行或列方向出现的固定模式噪声：
 
 ```text
-cfa_linedn()
-ddct8x8s()
+horizontal line noise：横向条纹，整行或局部行段偏亮/偏暗
+vertical line noise：纵向条纹，整列或局部列段偏亮/偏暗
+PDAF line artifact：相位对焦行附近的横向异常
 ```
 
-参数：
+这类噪声如果留到 demosaic 后再处理，会被插值扩散到 RGB 三通道，变成更复杂的彩色条纹、假色或局部 banding。RawTherapee 把它放在 demosaic 前，在 CFA 原始采样结构中处理。
+
+**算法流程**
+```text
+先分离低频/高频 （利用二维可分离的高斯滤波）
+在每个 RGGB 子相位上做 8x8 DCT
+只针对 DCT 中代表横线/竖线的轴向系数做 Wiener 风格衰减
+再 inverse DCT 加回低频图
+```
+维纳滤波在这里有介绍 [[../deblur/基于PSF的去模糊|基于PSF的去模糊]] ，即：
+```text
+信号能量 coeffsq 大：noisefactor 接近 1，保留更多
+噪声方差 noisevar 大：noisefactor 变小，衰减更多
+```
+
+高光保护和写回
+```text
+原始值接近 clipping：不改
+处理后值接近 clipping：不写
+```
+这样做是为了避免在高光/接近饱和区域引入异常修正。高光区域本身非线性和 clipping 很强，DCT line denoise 的线性假设不稳。
+
+## RAW CA correction
+
+
+镜头横向色差表现为不同颜色通道在空间位置上不完全重合。典型现象：
 
 ```text
-raw.bayersensor.linenoise
-raw.bayersensor.linenoiseDirection
+高反差边缘出现红/青边
+高反差边缘出现蓝/黄边
+画面边缘色边更明显
 ```
 
-支持方向：
+**总体算法结构**
 
-```text
-horizontal
-vertical
-both
-PDAF_LINES
-```
 
-代码里有 8x8 DCT 相关函数，说明它不是普通均值滤波，而是对 CFA 行/列噪声做频域/块处理。
-
-这个模块适合单独深入，尤其是行噪声、列噪声和 PDAF line 的交互。
-
-## 11. RAW CA correction
-
-相关文件：
-
-```text
-CA_correct_RT.cc
-```
-
-入口：
-
-```text
-CA_correct_RT()
-```
-
-触发条件：
-
-```text
-raw.ca_autocorrect
-raw.cared
-raw.cablue
-```
-
-特点：
-
-```text
-发生在 demosaic 前
-只针对 Bayer
-支持自动估计和手动红/蓝修正
-支持避免颜色偏移
-```
-
-RAW 域 CA 比 demosaic 后 RGB 拉伸更合理，因为 CFA 上红/蓝采样还没有被插值扩散。
-
-## 12. Lens vignetting
-
-`preprocess()` 中也会在没有 flat field 时使用镜头 profile 的 vignetting correction：
-
-```text
-Lensfun
-LCP
-metadata lens correction
-```
-
-相关文件：
-
-```text
-rtlensfun.cc
-lcp.cc
-lensmetadata.cc
-iptransform.cc
-```
-
-它和 flat field 的区别：
-
-```text
-flat field：基于实际拍摄或 DNG gain map
-lens profile：基于镜头模型/数据库/元数据
-```
-
+1. 准备 CFA tile、缓存和临时绿色插值 Gtmp
+   - 这里是经典操作，比较 R/G B/G 色差，先把G插全
+   
+2. 如果 autoCA：检测每个 tile 的 R/B 相对 G 的局部位移
+   - 这里就是在局部区域内 shift R/B, 并计算色差 G-R G-B。这样得到很多不同shift的色差图。
+   - 计算每个色差图的标准差，最小的就是最佳shift (颜色差异最小，意味着边缘处没有错位)
+   - 高反差边缘权重大，因为 CA 最容易在边缘上估计；
+   - 低频色差/颜色不稳定区域权重降低，避免把真实颜色边界当成 CA；
+   - 亮度结构越强，估计越可信
+   
+   - 这里直接找出每个 tile 中的最小相差的位置
+   
+3. 把 tile shift 拟合成平滑的二维多项式位移场
+   - 这里是全图做拟合，基于机头的色差是随半径变化的函数，不会突变。这样根据每个tilr的色差，拟合全图的分布，同时也能干掉离群点（拟合前也有滤波处理异常值）
+   
+4. 用 shift field 对 R/B 做重采样，并写回 rawData
+   - 这里是根据 G + 前面拟合的分布 插值色差，然后进一步计算 R B 的值
+   
+5. 可选 avoidColourshift：用模糊的 per-pixel factor 抑制整体色偏
+   - CA 重采样 R B 可能会造成这两个通道整体的颜色变了（低频变化）
+   - 比较矫正前后 RB 亮度变化了多少，生成一个比例图
+   - 对比例图做大半径高斯模糊（修正低频）
+   - 再把比例图乘回矫正后的图像，实现抑制色偏
 

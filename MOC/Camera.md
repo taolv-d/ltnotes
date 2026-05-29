@@ -38,8 +38,8 @@
 - [[../camera/denoise/2021 R2R|2021 R2R]]
 - [[../camera/denoise/2025 GR2R|2025 GR2R]]
 - [[../camera/denoise/2025 YOND|2025 YOND]]
-- [[../camera/restoration/2025 MFSR-GAN Samsung|2025 MFSR-GAN Samsung]]
-- [[../camera/restoration/2026 NanoSD Samsung|2026 NanoSD Samsung]]
+- [[../machine learning/restoration/2025 MFSR-GAN Samsung|2025 MFSR-GAN Samsung]]
+- [[../machine learning/restoration/2026 NanoSD Samsung|2026 NanoSD Samsung]]
 - [[../machine learning/low_light/2025 Low-Light Vision Survey|2025 Low-Light Vision Survey]]
 - [[../machine learning/low_light/Retinex|Retinex]]
 

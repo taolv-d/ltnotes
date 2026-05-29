@@ -75,7 +75,7 @@ $$
 
 3. **迭代推理**：即使网络本身能跑，1000步的去噪过程也会让总计算量变得巨大。
 
-**NanoSD**：作为专门为边缘设备设计的扩散模型家族[[../camera/restoration/2026 NanoSD Samsung|2026 NanoSD Samsung]]
+**NanoSD**：作为专门为边缘设备设计的扩散模型家族[[restoration/2026 NanoSD Samsung|2026 NanoSD Samsung]]
 
 
 # 基础知识
