@@ -1,3 +1,5 @@
+CRA 的前置知识参考 [[../sensor/CMOS image sensor（CIS）|CMOS image sensor（CIS）]]
+
 图片来自：[射线光学模拟 - PhyDemo](https://phydemo.app/ray-optics/cn/)
 
 ![[attachments/Pasted image 20260529182849.png]]
@@ -6,6 +8,8 @@
 - 中间光束是CRA match 状态的，他的光线打到自己的感光区域上。
 - 左边光束 是 **lens CRA 偏小** 的情况，会出现 **Luma Shading**。此时光线更直，经过micro lens后会偏离自己的感光区域，打到不感光的区域上，对应图像亮度下降。（lens的CRA不可能为负，因此不会找到右侧的感光区域上）
 - 右边光束是 **lens CRA 偏大**的情况，会出现 **Color Shading**。micro lens 的折射能力无法把这么大角度的光聚到自己的感光区域上。甚至会斜着打到左侧的感光区域引起crosstalk，对于彩色sensor 就会出现画面边缘颜色不对的问题
+
+
 
 CRA mismatch 常见的几类问题：
 
