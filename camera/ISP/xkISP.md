@@ -127,7 +127,7 @@ for each pixel:
 
 ## Demosaic
 
-xkISP 文档描述的是基于梯度和颜色差的边缘自适应算法。看起来是PPG算法[[demosic]]
+xkISP 文档描述的是基于梯度和颜色差的边缘自适应算法。看起来是PPG算法[[demosaic/demosic in dcraw]]
 
 ### 1.方向梯度判断
 

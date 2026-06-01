@@ -161,7 +161,7 @@ rawData[row][col] = simple_average(valid_same_phase_pixels)
 代码注释认为能走到备用路径的概率很低，主路径通常能找到至少一对有效像素。
 
 
-## 9. Green equilibration
+## Green equilibration
 
 ### 全局绿平衡
 
@@ -206,7 +206,7 @@ for each candidate green pixel gin:
     o1 = four diagonal green neighbours // 跟当前位置相异的G
     o2 = four axial green neighbours at distance 2 // 跟当前位置相同的G
 
-	// d1 d2 两个组内绿色之和
+	// d1 d2 两个组内绿色之和，d1 d2 差异大说明出现 绿色不平衡
     d1 = sum(o1)
     d2 = sum(o2)
     // c1 c2 组内不一致性: 组内四个值两两差的绝对值之和
@@ -219,7 +219,7 @@ for each candidate green pixel gin:
     // 这个判断区分纹理区域跟平坦区域
 	// c1 + c2 小：两组邻域各自比较平滑，不像复杂纹理
 	// abs(d1 - d2) 大：两组绿色估计有明显差异,可能不平衡
-	// 边缘区域 c1 + c2 变大，不会绿平衡
+	// 边缘区域 c1 + c2 变大，不做绿平衡
 
 	// 绿通道插值
     estimate gse, gnw, gne, gsw
@@ -231,7 +231,7 @@ for each candidate green pixel gin:
 ```
 
 
-**方向插值估计：ginterp**
+#### 方向插值估计：ginterp
 
 通过第一道判定后，算法估计当前绿色点 `gin` 应该接近的值。
 
@@ -241,7 +241,7 @@ for each candidate green pixel gin:
 gin = cfa[rr][cc]
 ```
 
-先构造四个方向的差分：
+先构造四个方向的差分（斜向四个相同的G 跟斜向四个相异的G 的色差）：
 
 ```text
 gmp2p2 = gin - cfa[rr + 2][cc + 2]
@@ -250,7 +250,7 @@ gmm2p2 = gin - cfa[rr - 2][cc + 2]
 gmp2m2 = gin - cfa[rr + 2][cc - 2]
 ```
 
-再构造四个方向估计值（加一半偏差值）：
+再构造四个方向估计值（加一半偏差值，修正斜向四个相异的G）：
 
 ```text
 gse = o1_4 + 0.5 * gmp2p2
@@ -282,7 +282,7 @@ ginterp =
 
 这一步和 demosaic 里的方向插值思想很像：让平滑方向贡献更多。
 
-**实际更新规则**
+#### 实际更新规则
 
 局部算法不是直接把 `gin` 替换成 `ginterp`。它还要过第二个条件：
 
@@ -307,9 +307,6 @@ new_g = 0.5 * (gin + ginterp)
 ```
 
 所以它更谨慎地抬高绿色值，避免在高亮边缘或噪声处制造新的亮点。
-
-
-
 
 ## CFA line denoise
 
@@ -384,3 +381,22 @@ PDAF line artifact：相位对焦行附近的横向异常
    - 对比例图做大半径高斯模糊（修正低频）
    - 再把比例图乘回矫正后的图像，实现抑制色偏
 
+# demosaic
+
+rawtherapee 的手册：[demosaicing：修订版之间的差异 - RawPedia](https://rawpedia.rawtherapee.com/index.php?diff=4371&oldid=4370&title=Demosaicing)
+
+| 算法          | 定位                          | 链接                        |
+| ----------- | --------------------------- | ------------------------- |
+| AMaZE       | 高质量 Bayer demosaic          | [[demosaic/AMaZE\|AMaZE]] |
+| RCD         | 质量/速度折中，推荐优先看               |                           |
+| LMMSE       | 高 ISO / 噪声友好                |                           |
+| IGV         | 高 ISO，减少 maze/posterization |                           |
+| AHD         | 经典同质性方向选择                   |                           |
+| EAHD        | Enhanced AHD                |                           |
+| HPHD        | 旧式高质量算法                     |                           |
+| VNG4        | dcraw 系传统算法                 |                           |
+| DCB         | 方向图和多轮修正                    |                           |
+| Bilinear    | 平滑/低对比混合用                   |                           |
+| FAST        | 快速预览                        |                           |
+| Dual        | 两种 demosaic 按局部对比混合         |                           |
+| Pixel Shift | 多帧像素位移合成                    |                           |
