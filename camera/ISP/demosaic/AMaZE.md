@@ -2,7 +2,7 @@
 这里基于rawtherapee 实现介绍。由于代码非常复杂，这里只关注算法流程、思想，不深入细节。细节可以关注开源代码实现
 链接：[[../rawtherapee|rawtherapee]]
 
-AMaZE 算是 demosaic 中还原细节最好的算法，代价是算法复杂，反差区域可能出现伪彩。
+AMaZE ( Aliasing Minimization and Zipper Elimination, 混叠最小化与拉链伪影消除) 算是 demosaic 中还原细节最好的算法，代价是算法复杂，反差区域可能出现伪彩。
 AMaZE的核心假设有三个，这也是最新的 demosaic 算法的指导思想：
 ```text
 1. green 通道采样最密，亮度结构主要由 green 承担，应优先高质量恢复 green。

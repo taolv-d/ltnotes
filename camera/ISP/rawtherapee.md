@@ -388,7 +388,7 @@ rawtherapee 的手册：[demosaicing：修订版之间的差异 - RawPedia](http
 | 算法          | 定位                          | 链接                        |
 | ----------- | --------------------------- | ------------------------- |
 | AMaZE       | 高质量 Bayer demosaic          | [[demosaic/AMaZE\|AMaZE]] |
-| RCD         | 质量/速度折中，推荐优先看               |                           |
+| RCD         | 质量/速度折中                     | [[demosaic/RCD\|RCD]]     |
 | LMMSE       | 高 ISO / 噪声友好                |                           |
 | IGV         | 高 ISO，减少 maze/posterization |                           |
 | AHD         | 经典同质性方向选择                   |                           |
