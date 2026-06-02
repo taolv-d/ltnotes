@@ -384,7 +384,7 @@ PDAF line artifact：相位对焦行附近的横向异常
 # demosaic
 
 rawtherapee 的手册：[demosaicing：修订版之间的差异 - RawPedia](https://rawpedia.rawtherapee.com/index.php?diff=4371&oldid=4370&title=Demosaicing)
-关于demosaic的更多讨论，效果对比见 [[demosaic/demosaic 总结|demosaic 总结]]
+关于demosaic的更多讨论，效果对比见 [[demosaic/demosaic summary|demosaic summary]]
 
 | 算法    | 定位                          | 链接                                              |
 | ----- | --------------------------- | ----------------------------------------------- |
