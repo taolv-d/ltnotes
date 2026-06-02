@@ -384,19 +384,17 @@ PDAF line artifact：相位对焦行附近的横向异常
 # demosaic
 
 rawtherapee 的手册：[demosaicing：修订版之间的差异 - RawPedia](https://rawpedia.rawtherapee.com/index.php?diff=4371&oldid=4370&title=Demosaicing)
+关于demosaic的更多讨论，效果对比见 [[demosaic/demosaic 总结|demosaic 总结]]
 
-| 算法          | 定位                          | 链接                        |
-| ----------- | --------------------------- | ------------------------- |
-| AMaZE       | 高质量 Bayer demosaic          | [[demosaic/AMaZE\|AMaZE]] |
-| RCD         | 质量/速度折中                     | [[demosaic/RCD\|RCD]]     |
-| LMMSE       | 高 ISO / 噪声友好                |                           |
-| IGV         | 高 ISO，减少 maze/posterization |                           |
-| AHD         | 经典同质性方向选择                   |                           |
-| EAHD        | Enhanced AHD                |                           |
-| HPHD        | 旧式高质量算法                     |                           |
-| VNG4        | dcraw 系传统算法                 |                           |
-| DCB         | 方向图和多轮修正                    |                           |
-| Bilinear    | 平滑/低对比混合用                   |                           |
-| FAST        | 快速预览                        |                           |
-| Dual        | 两种 demosaic 按局部对比混合         |                           |
-| Pixel Shift | 多帧像素位移合成                    |                           |
+| 算法    | 定位                          | 链接                                              |
+| ----- | --------------------------- | ----------------------------------------------- |
+| AMaZE | 高质量 Bayer demosaic          | [[demosaic/AMaZE\|AMaZE]]                       |
+| RCD   | 质量/速度折中                     | [[demosaic/RCD\|RCD]]                           |
+| LMMSE | 高 ISO / 噪声友好                | [[demosaic/LMMSE\|LMMSE]]                       |
+| IGV   | 高 ISO，减少 maze/posterization | [[demosaic/IGV\|IGV]]                           |
+| AHD   | 经典同质性方向选择                   | [[demosaic/demosic in dcraw\|demosic in dcraw]] |
+| EAHD  | AHD工程化改进                    |                                                 |
+| HPHD  | 旧式高质量算法                     | [[demosaic/HPHD\|HPHD]]                         |
+| VNG4  | dcraw 系传统算法                 | [[demosaic/demosic in dcraw\|demosic in dcraw]] |
+| DCB   | 方向图和多轮修正                    | [[demosaic/demosic in dcraw\|demosic in dcraw]] |
+
