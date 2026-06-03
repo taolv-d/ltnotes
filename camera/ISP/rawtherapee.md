@@ -392,9 +392,9 @@ rawtherapee 的手册：[demosaicing：修订版之间的差异 - RawPedia](http
 | RCD   | 质量/速度折中                     | [[demosaic/RCD\|RCD]]                           |
 | LMMSE | 高 ISO / 噪声友好                | [[demosaic/LMMSE\|LMMSE]]                       |
 | IGV   | 高 ISO，减少 maze/posterization | [[demosaic/IGV\|IGV]]                           |
-| AHD   | 经典同质性方向选择                   | [[demosaic/demosic in dcraw\|demosic in dcraw]] |
+| AHD   | 经典同质性方向选择                   | [[demosaic/demosaic in dcraw\|demosic in dcraw]] |
 | EAHD  | AHD工程化改进                    |                                                 |
 | HPHD  | 旧式高质量算法                     | [[demosaic/HPHD\|HPHD]]                         |
-| VNG4  | dcraw 系传统算法                 | [[demosaic/demosic in dcraw\|demosic in dcraw]] |
-| DCB   | 方向图和多轮修正                    | [[demosaic/demosic in dcraw\|demosic in dcraw]] |
+| VNG4  | dcraw 系传统算法                 | [[demosaic/demosaic in dcraw\|demosic in dcraw]] |
+| DCB   | 方向图和多轮修正                    | [[demosaic/demosaic in dcraw\|demosic in dcraw]] |
 

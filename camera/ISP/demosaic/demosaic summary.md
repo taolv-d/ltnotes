@@ -20,3 +20,7 @@ demosaic 的效果对比，图片来自 [[../rawtherapee|rawtherapee]]
 
 各个算法横向对比：
 [[../../../TODO|TODO]]
+
+rawtherapee 中的算法相对效果最好：[[../rawtherapee|rawtherapee]]
+dcraw 中的则是相对比较老比较基础的算法 [[demosaic in dcraw]]
+OpenCV 中只有简单的基础算法：[[demosaic in OpenCV]]
