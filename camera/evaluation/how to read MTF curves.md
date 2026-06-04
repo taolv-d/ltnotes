@@ -1,4 +1,9 @@
-原文 如何阅读MTF：蔡司原厂技术者教你看懂图表
+蔡司的原文见：
+https://lenspire.zeiss.com/photo/app/uploads/2022/02/technical-article-how-to-read-mtf-curves-01.pdf
+https://lenspire.zeiss.com/photo/app/uploads/2022/02/technical-article-how-to-read-mtf-curves-02.pdf
+
+
+以下正文摘自微信公众号文章（不过正文绝大部分也是原文的翻译，这里已经copy过来了，就不删除了）：如何阅读MTF：蔡司原厂技术者教你看懂图表
 
 [[../../TODO|TODO]]
 
