@@ -7,7 +7,7 @@
 - [[../camera/sensor/CMOS image sensor（CIS）|CMOS image sensor（CIS）]]
 - [[../camera/光学成像系统|光学成像系统]]
 - [[../camera/数码相机中的图像传感器和信号处理|数码相机中的图像传感器和信号处理]]
-- [[../camera/light/坎德拉、流明、勒克斯？|坎德拉、流明、勒克斯？]]
+- [[../camera/optics/light/坎德拉、流明、勒克斯？|坎德拉、流明、勒克斯？]]
 - [[../camera/sensor/2025 HDR Sensor Survey|2025 HDR Sensor Survey]]
 - [[../camera/sensor/芝加哥大学：Noise DR Bit Depth in Digital SLRs|芝加哥大学：Noise DR Bit Depth in Digital SLRs]]
 - [[../camera/TOF/TOF 总结|TOF 总结]]
@@ -27,8 +27,8 @@
 
 ## 色彩
 
-- [[../camera/color/影视从业者对色彩的理解：Color science and digital image|Color science and digital image]]
-- [[../camera/color/2025 非黎曼空间色彩几何学|2025 非黎曼空间色彩几何学]]
+- [[../camera/optics/color/影视从业者对色彩的理解：Color science and digital image|Color science and digital image]]
+- [[../camera/optics/color/2025 非黎曼空间色彩几何学|2025 非黎曼空间色彩几何学]]
 
 ## 图像质量问题
 
