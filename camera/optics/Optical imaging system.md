@@ -1,4 +1,4 @@
-
+[[../../TODO|TODO]] 这篇2024年的文章需要进一步整理
 ## 基本概念
 
 ### 名词解释
@@ -170,19 +170,7 @@ ref [佳能（中国）－ RF/EF镜头 － 技术介绍 － BR镜片 (canon.com.
 
 ## MTF
 
-### 点扩散函数 PSF
-
-一个点经过成像系统变为一个弥散斑
-
-PSF越窄，解析度越好
-![[attachments/2024-01-07-14-28-22-image.png]]
-### 衍射极限
-![[attachments/2024-01-07-14-34-04-image.png]]
-中心衍射条纹的尺寸为 $R=0.61\lambda/NA$
-
-### 衍射极限与分辨率
-
-![](https://bkimg.cdn.bcebos.com/pic/c9fcc3cec3fdfc03945512f0d63f8794a4c2264c?x-bce-process=image/watermark,image_d2F0ZXIvYmFpa2U4MA==,g_7,xp_5,yp_5/format,f_auto)
+点扩散函数 PSF 见 [[PSF]]
 
 ### MTF
 
@@ -205,24 +193,7 @@ $MTF=\dfrac{mean(br\%)-mean(dk\%)}{mean(br\%)+mean(dk\%)}$
 不能区分S/T方向
 
 #### SFR
-
-提斜边  一阶差分  傅里叶变换
-
-![](https://pic1.zhimg.com/80/9546d9526670d2b2f66867f08a236368_1440w.webp)
-
-点扩展函数PSF(Point Spread Function)
-
-线扩展函数LSF(Line Spread Function)
-
-边缘扩展函数ESF(Edge Spread Function)
-
-当获取点光源像的亮度分布函数PSF(X,Y)后，对其进行二维傅里叶变换即可得MTF (u，v)。因此，从理论上讲，从PSF也是获取MTF的一个方法。但是，在实际的应用中，由于地面点光源强度很弱，此方法一般较少采用。相对于PSF来说，LSF的能量得到了一定程度的加强。SFR计​算MTF就通过ESF来得到LSF然后进行FFT得到MTF各个频率的值的。这几者之间的关系如下图
-
-![](https://pic4.zhimg.com/34d7f24d961a572cc7353d80d0c6ee8b_r.jpg)
-
-换一种角度理解LSF就是一条线上（ESF） 的变化的过称。对于任意一条线由黑变白的过程是由不同频率的黑白线对组成。因此可以反过来通过分析一条线得到这些频率下的　（FFT）
-
-![](https://pic3.zhimg.com/80/79366e090e9e8757025ee6b362c977be_1440w.webp)
+这里有更详细的介绍：[[../evaluation/MTF|MTF]]
 
 #### 其他chart
 

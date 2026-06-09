@@ -1,6 +1,6 @@
-CRA 的前置知识参考 [[../sensor/CMOS image sensor（CIS）|CMOS image sensor（CIS）]]
+CRA 的前置知识参考 [[../sensor/CMOS image sensor（CIS）|CMOS image sensor（CIS）]]  以及 [[CRA]]
 
-图片来自：[射线光学模拟 - PhyDemo](https://phydemo.app/ray-optics/cn/)
+图片来自：[射线光学模拟 - PhyDemo](。https://phydemo.app/ray-optics/cn/)
 
 ## Luma shading、color shading
 
