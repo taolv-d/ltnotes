@@ -20,7 +20,7 @@
 
 **CRA mismatch** 
 CRA 失配也会引起 这两种shading，但是LSC没有能力矫正，因此CRA差异一般要控制在2~3°
-参考： [[CRA mismatch]]
+参考： [[../optics/CRA mismatch]]
 
 ## 标定与矫正
 
