@@ -4,11 +4,8 @@
 ### 名词解释
 ![[attachments/2024-01-07-13-38-47-image.png]]
 **optical axis** 光轴
-
 **optical center** 光心
-
 **aperture** 光圈
-
 **focal length（*f*）** 焦距
 
 **** 
@@ -171,46 +168,7 @@ ref [佳能（中国）－ RF/EF镜头 － 技术介绍 － BR镜片 (canon.com.
 ## MTF
 
 点扩散函数 PSF 见 [[PSF]]
-
-### MTF
-
-#### contrast MTF
-
-由低频到高频评价振幅的大小
-![[attachments/2024-01-07-14-44-41-image.png]]
-#### log F
-
-X 方向频率越来越高
-
-Y 方向对比度有变化
-
-![[attachments/2024-01-07-14-47-19-image.png]]
-#### 棋盘格
-
-$MTF=\dfrac{mean(br\%)-mean(dk\%)}{mean(br\%)+mean(dk\%)}$
-
-![[attachments/2024-01-07-14-48-32-image.png]]
-不能区分S/T方向
-
-#### SFR
-这里有更详细的介绍：[[../evaluation/MTF|MTF]]
-
-#### 其他chart
-
-SFR chart、SFRplus
-
-siemens star(方波 正弦波)
-
-Texture MTF 原点图
-
-USAF1951
-
-ISO12233
-
-### MTF 单位
-
-![[attachments/2024-01-07-15-02-30-image.png]]
-![](attachments/2024-01-07-15-02-13-image.png)
+MTF 见 [[../evaluation/MTF|MTF]]
 
 ## 光学像差
 
