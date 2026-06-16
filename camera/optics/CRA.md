@@ -30,7 +30,7 @@ CRA mismatch 的影响见 [[CRA mismatch]]
 
 | 0°CRA镜头                                        | 手机镜头                                    |
 | ---------------------------------------------- | --------------------------------------- |
-| ![[attachments/2024-01-07-16-17-42-image.png]] | ![[2024-01-07-16-15-27-image.png\|231]] |
+| ![[attachments/2024-01-07-16-17-42-image.png]] | ![[attachments/2024-01-07-16-15-27-image.png|231]] |
 
 因此就需要 sensor 适配镜头，从中心到边缘CRA逐渐增大。以下是几种改变sensor CRA 的手段
 
@@ -46,5 +46,4 @@ CRA mismatch 的影响见 [[CRA mismatch]]
 
 4. 背照式变为前照式（BSI->FSI）
 ![[attachments/2024-01-07-16-20-31-image.png|353]]
-
 
