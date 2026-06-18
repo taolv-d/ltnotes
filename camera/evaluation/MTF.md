@@ -129,6 +129,7 @@ ISO12233
 ## 4. MTF的单位
 
 ![[attachments/Pasted image 20260610171754.png]]
+- **cycles/mm (有的厂商也叫 lp/mm)**: 每毫米的传感器平面或胶片平面上，能分辨出多少个“黑-白”周期
 
 - **C/P (Cycles/Pixel)**：一个pixel大小占 ”黑-白-黑“ 周期的 比例。（奈奎斯特采样极限就是0.5：黑一个pixel, 白一个pixel）。用于看镜头是否喂饱传感器
 
