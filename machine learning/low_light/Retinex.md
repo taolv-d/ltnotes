@@ -1,3 +1,15 @@
+---
+type: note
+status: draft
+tags:
+  - machine-learning
+  - low-light
+  - retinex
+rating: 0
+create: 2026-05-06
+update:
+---
+
 [[../../TODO|TODO]]
 Retinex 理论解释了我们为什么能在不同光线下，认出物体本来的颜色。它核心就一句话：
 

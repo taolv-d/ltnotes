@@ -1,3 +1,17 @@
+---
+type: artical
+status: done
+tags:
+  - machine-learning
+  - survey
+  - diffusion
+rating: 0
+create: 2026-05-13
+publish: 2025
+url: 
+update:
+---
+
 原文：Diffusion Models for Image Restoration and Enhancement: A Comprehensive Survey
 
 ![[nn积木/attachments/Pasted image 20260512161241.png]]

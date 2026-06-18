@@ -1,3 +1,14 @@
+---
+type: note
+status: done
+tags:
+  - computer
+  - architecture
+rating: 0
+create: 2026-05-21
+update:
+---
+
 1. SRAM 静态存储器，使用锁存器存储，通常使用6个晶体管保存一个 bit
 
 2. DRAM 动态存储，使用电容存储一个bit，由于电容会漏电，因此要不断刷新，同时读取后要马上再写回去

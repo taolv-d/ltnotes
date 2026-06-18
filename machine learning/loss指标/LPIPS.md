@@ -1,3 +1,14 @@
+---
+type: note
+status: draft
+tags:
+  - machine-learning
+  - loss
+rating: 0
+create: 2026-04-23
+update:
+---
+
 [[../../TODO|TODO]] FID、MUSIQ 
 
 - **全称**：Learned Perceptual Image Patch Similarity（学习感知图像块相似度）

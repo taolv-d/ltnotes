@@ -1,3 +1,16 @@
+---
+type: note
+status: done
+tags:
+  - camera
+  - sensor
+  - noise
+  - git
+rating: 0
+create: 2026-05-21
+update:
+---
+
 # 1. 该文章主要讨论以下几种噪声：
 
 1. 散粒噪声（P）: 服从泊松分bu

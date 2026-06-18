@@ -1,3 +1,14 @@
+---
+type: note
+status: done
+tags:
+  - camera
+  - isp
+rating: 0
+create: 2026-06-02
+update:
+---
+
 LMMSE 全称是 Linear Minimum Mean Square-error Estimation。对应论文是：
 ```text
 L. Zhang and X. Wu,

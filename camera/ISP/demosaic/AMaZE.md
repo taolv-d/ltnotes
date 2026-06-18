@@ -1,3 +1,13 @@
+---
+type: note
+status: done
+tags:
+  - camera
+  - isp
+rating: 0
+create: 2026-06-01
+update:
+---
 
 这里基于rawtherapee 实现介绍。由于代码非常复杂，这里只关注算法流程、思想，不深入细节。细节可以关注开源代码实现
 链接：[[../rawtherapee|rawtherapee]]

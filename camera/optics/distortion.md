@@ -1,3 +1,14 @@
+---
+type: note
+status: done
+tags:
+  - camera
+  - optics
+  - distortion
+rating: 0
+create: 2026-06-11
+update:
+---
 
 ## 畸变 distortion
 

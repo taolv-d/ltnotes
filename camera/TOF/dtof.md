@@ -1,3 +1,15 @@
+---
+type: note
+status: done
+tags:
+  - camera
+  - tof
+  - dtof
+rating: 0
+create: 2026-05-12
+update:
+---
+
 # 0 dtof系统
 ## dtof系统
 **VCSEL:** VCSEL全称为垂直腔面发射激光器（Vertical-Cavity Surface-Emitting Laser），是半导体激光器的一种，当前以砷化镓半导体为基础材料的VCSEL居多，发射波长主要为近红外波段。

@@ -1,3 +1,14 @@
+---
+type: note
+status: done
+tags:
+  - camera
+  - optics
+  - psf
+rating: 0
+create: 2026-06-09
+update:
+---
 
 ## PSF
 PSF 是点扩散函数，我们的镜头就是一个低通滤波器，它的特性就可以用PSF描述。

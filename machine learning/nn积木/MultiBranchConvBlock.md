@@ -1,3 +1,15 @@
+---
+type: note
+status: done
+tags:
+  - machine-learning
+  - nn-block
+  - conv
+rating: 0
+create: 2026-04-14
+update:
+---
+
 MultiBranchConvBlock 是一个**轻量的多分支卷积块**，作用是用比较低的成本同时看不同感受野。
 
 它的结构非常直接：输入 x 之后，并行走 3 个分支，每个分支都是 **depthwise conv + 激活函数**。

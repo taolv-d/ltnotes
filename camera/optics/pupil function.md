@@ -1,15 +1,15 @@
 ---
 type: note
-status: draft
+status: done
 tags:
-  - optics
   - camera
+  - optics
+  - pupil
 rating: 0
 create: 2026-06-18
-link:
-  - "[[PSF]]"
-  - "[[../evaluation/MTF|MTF]]"
+update:
 ---
+
 ## pupil function
 pupil function 中文常翻译为 光瞳函数，孔径函数。它的数学表达式为：
 $$

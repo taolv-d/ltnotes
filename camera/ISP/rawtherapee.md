@@ -1,3 +1,14 @@
+---
+type: note
+status: done
+tags:
+  - camera
+  - isp
+rating: 0
+create: 2026-05-26
+update:
+
+---
 # 前处理模块
 
 大致顺序：

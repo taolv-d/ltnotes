@@ -5,6 +5,9 @@
     "tags": "tags",
     "date": "date",
     "rating": "number",
-    "link": "multitext"
+    "create": "date",
+    "publish": "date",
+    "update": "date",
+    "url": "text"
   }
 }

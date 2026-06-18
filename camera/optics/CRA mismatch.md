@@ -1,3 +1,15 @@
+---
+type: note
+status: done
+tags:
+  - camera
+  - optics
+  - cra
+rating: 0
+create: 2026-04-09
+update:
+---
+
 CRA 的前置知识参考 [[../sensor/CMOS image sensor（CIS）|CMOS image sensor（CIS）]]  以及 [[CRA]]
 
 图片来自：[射线光学模拟 - PhyDemo](。https://phydemo.app/ray-optics/cn/)

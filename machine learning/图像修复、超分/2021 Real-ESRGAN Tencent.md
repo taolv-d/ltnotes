@@ -1,3 +1,16 @@
+---
+type: artical
+status: done
+tags:
+  - machine-learning
+  - gan
+rating: 0
+create: 2026-04-17
+publish: 2021
+url: 
+update:
+---
+
 ## 文章提出模拟真实图像退化来生成训练数据：
 ![[attachments/Pasted image 20260417163334.png]]
 ## 两阶段训练策略

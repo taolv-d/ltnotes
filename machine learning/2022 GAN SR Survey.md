@@ -1,3 +1,17 @@
+---
+type: artical
+status: done
+tags:
+  - machine-learning
+  - survey
+  - gan
+rating: 0
+create: 2026-05-11
+update:
+publish: 2022
+url:
+---
+
 原文：Generative Adversarial Networks for Image Super-Resolution: A Survey
 
 本文虽然2026年发表，但2022年已经写成，且后续无大更新。同时2022~2026这段时间GAN相关的研究已经很少，主流生成研究已经转向transformer等注意力机制了。不过此文对快速了解GAN 2019~2022年的黄金时期仍有较大帮助。

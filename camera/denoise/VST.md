@@ -1,3 +1,13 @@
+---
+type: note
+status: done
+tags:
+  - camera
+  - denoise
+rating: 0
+create: 2026-04-17
+update:
+---
 
 VST 变换的源头是 Francis Anscombe 在 1948 年发表的论文 **《The transformation of Poisson, binomial and negative-binomial data》** 。
 

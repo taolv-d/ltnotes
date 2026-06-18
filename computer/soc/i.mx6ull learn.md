@@ -1,3 +1,14 @@
+---
+type: note
+status: done
+tags:
+  - computer
+  - soc
+rating: 0
+create: 2026-05-12
+update:
+---
+
 ## 常用linux命令
 
 ### 磁盘

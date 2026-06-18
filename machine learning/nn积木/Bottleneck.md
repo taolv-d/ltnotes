@@ -1,3 +1,13 @@
+---
+type: note
+status: done
+tags:
+  - machine-learning
+  - nn-block
+rating: 0
+create: 2026-04-14
+update:
+---
 
 Bottleneck = 用较少的计算做一次“特征加工”，并且常常带一条捷径连接（shortcut）
 

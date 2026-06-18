@@ -1,3 +1,15 @@
+---
+type: note
+status: done
+tags:
+  - camera
+  - optics
+  - aberration
+rating: 0
+create: 2026-06-11
+update:
+---
+
 ## 光学像差
 ### 波前
 

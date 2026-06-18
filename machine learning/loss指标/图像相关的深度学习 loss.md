@@ -1,3 +1,14 @@
+---
+type: note
+status: draft
+tags:
+  - machine-learning
+  - loss
+rating: 0
+create: 2026-04-22
+update:
+---
+
 [[TODO]] Charbonnier / SSIM / Edge / TV
 
 ### 🏷️ 图像分类与回归

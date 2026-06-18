@@ -1,3 +1,15 @@
+---
+type: note
+status: draft
+tags:
+  - computer
+  - tools
+  - repo
+rating: 0
+create: 2026-05-12
+update:
+---
+
 这是一个24年9月的笔记，同步到我们新的仓库
 [[TODO]] 这是现成的博客文章，还需要进一步整理
 

@@ -1,3 +1,14 @@
+---
+type: note
+status: done
+tags:
+  - computer
+  - tools
+rating: 0
+create: 2026-05-12
+update:
+---
+
 这是一个24年9月的笔记，同步到我们新的仓库
 
 **具体快捷键只需要打开菜单栏查看**

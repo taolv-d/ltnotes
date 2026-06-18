@@ -1,3 +1,13 @@
+---
+type: note
+status: done
+tags:
+  - camera
+  - tof
+rating: 0
+create: 2026-05-12
+update:
+---
 
 参考文档：Deptrum_ToF_White_Paper
 

@@ -1,3 +1,13 @@
+---
+type: note
+status: done
+tags:
+  - camera
+  - isp
+rating: 0
+create: 2026-06-02
+update:
+---
 
 IGV 全称是 Integrated Gaussian Vector on Color Differences。它非常像 [[RCD]]：
 

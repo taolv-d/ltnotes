@@ -1,3 +1,16 @@
+---
+type: artical
+status: done
+tags:
+  - camera
+  - nn-isp
+  - survey
+rating: 0
+create: 2026-05-07
+publish: 2023
+url: 
+update:
+---
 
 原文：ISP meets Deep Learning: A Survey on Deep Learning Methods for Image Signal Processing
 

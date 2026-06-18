@@ -1,3 +1,15 @@
+---
+type: note
+status: done
+tags:
+  - camera
+  - isp
+  - demosaic
+rating: 0
+create: 2026-06-03
+update:
+---
+
  OpenCV 4.x demosaic 算法主要有以下三类：
   - Bilinear
   - VNG: 见 [[demosaic in dcraw]]

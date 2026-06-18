@@ -1,3 +1,14 @@
+---
+type: note
+status: done
+tags:
+  - machine-learning
+  - backbone
+  - conv
+rating: 0
+create: 2026-04-21
+update:
+---
 
 **ConvNeXt** 是一种现代 CNN 网络架构，可以理解成“用纯卷积方式吸收 Transformer/ViT 设计经验后的卷积网络”。用于现代高性能 CNN
 

@@ -1,3 +1,13 @@
+---
+type: note
+status: done
+tags:
+  - machine-learning
+  - nn-block
+rating: 0
+create: 2026-04-17
+update:
+---
 
 ```
 Input (64 channels)

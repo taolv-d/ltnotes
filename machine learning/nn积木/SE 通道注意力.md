@@ -1,3 +1,14 @@
+---
+type: note
+status: done
+tags:
+  - machine-learning
+  - nn-block
+rating: 0
+create: 2026-04-21
+update:
+---
+
 SE 全称是 **Squeeze-and-Excitation**
 - 网络自己判断哪些通道重要
 - 重要通道放大

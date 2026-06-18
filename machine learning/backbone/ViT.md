@@ -1,3 +1,14 @@
+---
+type: note
+status: done
+tags:
+  - machine-learning
+  - backbone
+  - transformer
+rating: 0
+create: 2026-04-23
+update:
+---
 
 ![[attachments/Pasted image 20260425174936.png]]
 

@@ -1,3 +1,16 @@
+---
+type: artical
+status: done
+tags:
+  - camera
+  - denoise
+rating: 0
+create: 2026-04-09
+publish: 2007
+url: 
+update:
+---
+
 # NLM
 
 NLM 非局部均值，他的思想现在看来已经不算新，就是如何在单张图中应用3D降噪（显然这里考虑的噪声是独立同分布的，如果有FPN，效果就会有折扣）。

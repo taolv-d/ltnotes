@@ -1,3 +1,13 @@
+---
+type: note
+status: done
+tags:
+  - camera
+  - isp
+rating: 0
+create: 2026-06-01
+update:
+---
 
 RCD 全名是 Ratio Corrected Demosaicing，他比 [[AMaZE]] 算法上要简洁的多。
 ### RCD 和 AMaZE 的核心差异

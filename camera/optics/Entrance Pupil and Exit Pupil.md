@@ -1,3 +1,15 @@
+---
+type: note
+status: done
+tags:
+  - camera
+  - optics
+  - pupil
+rating: 0
+create: 2026-06-05
+update:
+---
+
 ## 1. 入瞳与出瞳的定义
 
 **入瞳**从物方向镜头里面看到的光圈的虚像

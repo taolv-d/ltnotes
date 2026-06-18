@@ -1,3 +1,14 @@
+---
+type: note
+status: draft
+tags:
+  - camera
+  - optics
+rating: 0
+create: 2026-05-12
+update:
+---
+
 [[../../TODO|TODO]] 这篇2024年的文章需要进一步整理
 ## 基本概念
 

@@ -1,3 +1,14 @@
+---
+type: note
+status: done
+tags:
+  - camera
+  - deblur
+  - psf
+rating: 0
+create: 2026-05-23
+update:
+---
 
 PSF 是点扩散函数的缩写，能够反映镜头的模糊程度; 可以拍点源光获得
 ![](https://ar5iv.labs.arxiv.org/html/2208.00950/assets/x2.png)

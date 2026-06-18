@@ -1,3 +1,16 @@
+---
+type: artical
+status: done
+tags:
+  - machine-learning
+  - image-restoration
+rating: 0
+create: 2026-05-13
+publish: 2026
+url: 
+update:
+---
+
 原文 NanoSD: Edge Efficient Foundation Model for Real Time Image Restoration
 
 ![[attachments/Pasted image 20260512161427.png]]

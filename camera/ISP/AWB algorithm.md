@@ -1,3 +1,14 @@
+---
+type: note
+status: done
+tags:
+  - camera
+  - isp
+  - awb
+rating: 0
+create: 2026-05-24
+update:
+---
 
 AWB 算法就是找到图像中灰色的部分，以此为依据，调整三个颜色通道的增益。
 

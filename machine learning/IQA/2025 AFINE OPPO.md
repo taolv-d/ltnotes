@@ -2,10 +2,12 @@
 type: artical
 status: todo
 tags:
-  - isp
-  - iq
-  - nn
-  - camera
-rating: 3
-date: 2026-06-18
+  - machine-learning
+  - iqa
+rating: 0
+create: 2026-06-18
+publish: 2025
+url: 
+update:
 ---
+

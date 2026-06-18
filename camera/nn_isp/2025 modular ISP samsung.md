@@ -1,3 +1,15 @@
+---
+type: artical
+status: done
+tags:
+  - camera
+  - nn-isp
+rating: 0
+create: 2026-04-14
+publish: 2025
+url: 
+update:
+---
 
 Modular Neural Image Signal Processing
 

@@ -1,3 +1,15 @@
+---
+type: artical
+status: done
+tags:
+  - camera
+  - denoise
+rating: 0
+create: 2026-05-09
+publish: 2018
+url: 
+update:
+---
 
 Noise2Noise: Learning Image Restoration without Clean Data
 

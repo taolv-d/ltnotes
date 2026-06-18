@@ -1,3 +1,14 @@
+---
+type: note
+status: todo
+tags:
+  - camera
+  - isp
+rating: 0
+create: 2026-05-21
+update:
+---
+
 # 成像系统基本结构
 
 ![](attachments/isp-overview-image.png)

@@ -1,3 +1,13 @@
+---
+type: note
+status: done
+tags:
+  - camera
+  - isp
+rating: 0
+create: 2026-05-19
+update:
+---
 
 **camera & ISP**
 - 产品应用场景及画质需求

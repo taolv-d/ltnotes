@@ -1,3 +1,16 @@
+---
+type: artical
+status: done
+tags:
+  - machine-learning
+  - gan
+rating: 0
+create: 2026-04-17
+publish: 2018
+url: 
+update:
+---
+
 **2018年** 随论文 **ESRGAN: Enhanced Super-Resolution Generative Adversarial Networks**
 
 RRDBNet 网络结构：

@@ -1,3 +1,14 @@
+---
+type: artical
+status: todo
+tags:
+  - machine-learning
+rating: 0
+create: 2026-04-23
+publish: 2022
+url: https://github.com/megvii-research/NAFNet?utm_source=chatgpt.com
+update:
+---
 
 [megvii-research/NAFNet: The state-of-the-art image restoration model without nonlinear activation functions.](https://github.com/megvii-research/NAFNet?utm_source=chatgpt.com)
 

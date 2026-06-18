@@ -1,3 +1,13 @@
+---
+type: note
+status: done
+tags:
+  - machine-learning
+  - nn-block
+rating: 0
+create: 2026-04-14
+update:
+---
 
 C2f = 先分流，再逐步加工，再把多路特征拼起来融合
 

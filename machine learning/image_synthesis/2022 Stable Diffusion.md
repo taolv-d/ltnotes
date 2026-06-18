@@ -1,3 +1,17 @@
+---
+type: artical
+status: done
+tags:
+  - machine-learning
+  - image-synthesis
+  - diffusion
+rating: 0
+create: 2026-05-14
+publish: 2022
+url: 
+update:
+---
+
 论文：High-Resolution Image Synthesis with Latent Diffusion Models
 
 以下内容并非完全基于论文总结

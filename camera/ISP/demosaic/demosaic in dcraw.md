@@ -1,3 +1,16 @@
+---
+type: note
+status: done
+tags:
+  - camera
+  - isp
+  - cra
+  - demosaic
+rating: 0
+create: 2026-05-23
+update:
+---
+
 | 算法     | 核心策略              | 优点      | 代价     |
 | ------ | ----------------- | ------- | ------ |
 | Linear | 固定邻域加权平均          | 快、简单    | 边缘和彩边差 |

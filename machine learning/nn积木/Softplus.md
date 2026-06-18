@@ -1,3 +1,15 @@
+---
+type: note
+status: done
+tags:
+  - machine-learning
+  - nn-block
+  - activation
+rating: 0
+create: 2026-04-14
+update:
+---
+
 Softplus 是一个**平滑版的 ReLU**，公式是：`Softplus(x) = log(1 + exp(x))`
 
 它的特点是：

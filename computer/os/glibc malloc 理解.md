@@ -1,3 +1,15 @@
+---
+type: note
+status: done
+tags:
+  - computer
+  - os
+  - memory
+rating: 0
+create: 2026-05-21
+update:
+---
+
 参考资料：
 
 中文翻译：https://ltfa1l.top/2023/09/23/system/Heap/understanding\_glibc\_malloc/

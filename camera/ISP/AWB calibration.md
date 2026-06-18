@@ -1,3 +1,15 @@
+---
+type: note
+status: done
+tags:
+  - camera
+  - isp
+  - awb
+rating: 0
+create: 2026-05-19
+update:
+---
+
 AWB 是非常依赖标定的模块，如果AWB检测白点的算法是完美的，只要标定效果足够好，AWB表现就是OK的。
  AWB 算法本质是在相机直出的色彩空间中找到哪些本该是白色的区域（这也就是AWB要标定，甚至每个sensor都要单独标定的原因）。
  

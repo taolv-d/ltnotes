@@ -1,3 +1,16 @@
+---
+type: artical
+status: done
+tags:
+  - camera
+  - denoise
+rating: 0
+create: 2026-05-13
+publish: 2020
+url: 
+update:
+---
+
 # k-sigma 变换降低降噪难度
 
 - **难点**：ISO 100 和 ISO 6400 的噪声完全不是一个量级。如果直接喂给一个网络，网络会很困惑，难以收敛（或者需要一个大网络才能处理）。

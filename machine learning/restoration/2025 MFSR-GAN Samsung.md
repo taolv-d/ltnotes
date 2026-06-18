@@ -1,3 +1,16 @@
+---
+type: artical
+status: done
+tags:
+  - machine-learning
+  - image-restoration
+  - gan
+rating: 0
+create: 2026-04-27
+publish: 2025
+url: 
+update:
+---
 
 [[../../TODO|TODO]]
 

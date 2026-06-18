@@ -1,3 +1,14 @@
+---
+type: note
+status: done
+tags:
+  - camera
+  - isp
+  - lsc
+rating: 0
+create: 2026-05-23
+update:
+---
 
 ## 为什么需要LSC
 

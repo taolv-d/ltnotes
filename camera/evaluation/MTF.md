@@ -1,7 +1,14 @@
-蔡司 how to read MTF curves part 1 的翻译在这[[how to read MTF curves]]
-
-以下是个人视角的 MTF 理解
-
+---
+type: note
+status: draft
+tags:
+  - camera
+  - evaluation
+  - mtf
+rating: 0
+create: 2026-06-05
+update:
+---
 ## 1. MTF 是什么
 
  先从信号与系统的角度看，镜头是一个低通滤波器，其响应会从低频到高频逐渐衰减。但是镜头的低通滤波器要复杂一点：
@@ -95,8 +102,6 @@ $$
 1. 未经过镜头退化的，峰峰值比较高，对比度好
 2. 经过镜头退化的，峰峰值比较小，对比度下降
 比较这两个信号的振幅变化情况就是镜头的衰减程度。改变正弦波的频率，就能测不同空间频率。这样就直接得到MTF曲线了
-
-[[../../TODO|TODO]] 这里还有很多其他杂七杂八的方法在这里，后续继续整理[[../optics/Optical imaging system|Optical imaging system]]
 
 ### 4. 对数频率反差测试
 

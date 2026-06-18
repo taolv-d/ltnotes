@@ -1,3 +1,14 @@
+---
+type: note
+status: done
+tags:
+  - machine-learning
+  - nn-block
+rating: 0
+create: 2026-04-14
+update:
+---
+
 Neck 是**目标检测里很常见的一段中间结构**：把不同层、不同尺度的特征融合起来
 
 **它到底在干嘛**  

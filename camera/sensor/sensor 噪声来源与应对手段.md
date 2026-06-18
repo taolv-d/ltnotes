@@ -1,3 +1,14 @@
+---
+type: note
+status: draft
+tags:
+  - camera
+  - sensor
+rating: 0
+create: 2026-05-17
+update:
+---
+
 [[TODO]] 本文来源于2024年的一篇半成品笔记，待整理
 
 ![[attachments/Pasted image 20260516095519.png]]

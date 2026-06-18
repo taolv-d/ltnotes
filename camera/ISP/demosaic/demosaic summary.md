@@ -1,3 +1,15 @@
+---
+type: note
+status: draft
+tags:
+  - camera
+  - isp
+  - demosaic
+rating: 0
+create: 2026-06-02
+update:
+---
+
 这篇知乎文章可以用于快速理解demosaic算法（主要是色差法、基于梯度计算权重的思想）的原理：[基于边缘感知的低复杂度、高质量去马赛克算法 - 知乎](https://zhuanlan.zhihu.com/p/563755436)
 
   

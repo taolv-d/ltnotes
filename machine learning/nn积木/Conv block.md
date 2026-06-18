@@ -1,3 +1,15 @@
+---
+type: note
+status: done
+tags:
+  - machine-learning
+  - nn-block
+  - conv
+rating: 0
+create: 2026-04-14
+update:
+---
+
 Conv block 通常包含三个部分：
 - Conv 卷积：提特征
 - BN 归一化：稳训练

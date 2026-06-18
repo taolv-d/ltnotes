@@ -1,3 +1,14 @@
+---
+type: note
+status: draft
+tags:
+  - machine-learning
+  - backbone
+  - mamba
+rating: 0
+create: 2026-04-25
+update:
+---
 
 # V1
 [[ViT]]是一次性让所有图像块"两两对视"；而 Mamba 是让图像块排成一队，依次走过一个"有记忆的状态空间"，边走边更新记忆，最后用这个记忆代表整幅图。

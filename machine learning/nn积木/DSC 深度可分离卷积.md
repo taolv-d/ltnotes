@@ -1,3 +1,14 @@
+---
+type: note
+status: done
+tags:
+  - machine-learning
+  - nn-block
+rating: 0
+create: 2026-04-21
+update:
+---
+
 depthwise separable convolution 深度可分离卷积
 
 可以理解成：把一次普通卷积，拆成两步做:先做“每个通道内部的空间提取”，再做“跨通道融合”

@@ -1,3 +1,14 @@
+---
+type: note
+status: done
+tags:
+  - camera
+  - isp
+rating: 0
+create: 2026-05-23
+update:
+---
+
 项目地址：[openasic-org/xkISP: xkISP：Xinkai ISP IP Core (HLS)](https://github.com/openasic-org/xkISP)
 xkISP is an open source image signal processor (ISP) based on Xilinx development tools
 ![[attachments/Pasted image 20260523152538.png]]

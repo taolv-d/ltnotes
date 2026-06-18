@@ -1,3 +1,14 @@
+---
+type: note
+status: done
+tags:
+  - computer
+  - programming
+rating: 0
+create: 2026-05-21
+update:
+---
+
 ### 一、C++的设计初衷与哲学
 
 * 起源于实际问题：C++诞生于1979年，因构建分布式Unix系统的需求而设计。Bjarne需要一种既能像C一样高效操作硬件，又能像Simula一样支持高级抽象的语言。

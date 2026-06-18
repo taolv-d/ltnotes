@@ -1,3 +1,15 @@
+---
+type: note
+status: done
+tags:
+  - camera
+  - optics
+  - diffraction
+rating: 0
+create: 2026-06-09
+update:
+---
+
 ## 衍射极限
 衍射极限是光的物理性质，衍射极限与镜头的NA(或者F数)密切相关。
 这个页面有讨论孔径角与衍射极限的关系 [[Entrance Pupil and Exit Pupil]]

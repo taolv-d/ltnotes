@@ -1,3 +1,14 @@
+---
+type: note
+status: done
+tags:
+  - machine-learning
+  - nn-block
+rating: 0
+create: 2026-04-14
+update:
+---
+
 SPPF 是 YOLO 里一个很经典的“**扩大感受野、融合多尺度上下文**”的小模块。
 SPPF = 用多次池化，让网络在不改变特征图大小的前提下，看见更大范围的信息
 

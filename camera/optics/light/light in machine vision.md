@@ -1,3 +1,17 @@
+---
+type: artical
+status: done
+tags:
+  - camera
+  - optics
+  - light
+rating: 0
+create: 2026-06-16
+publish: 
+url: 
+update:
+---
+
 ## 同轴光照明 Coaxial Light
 
 避免由于表面高低不平或复杂形状导致的阴影问题，提供更均匀的照明效果

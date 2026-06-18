@@ -1,3 +1,15 @@
+---
+type: note
+status: done
+tags:
+  - computer
+  - tools
+  - git
+rating: 0
+create: 2026-05-12
+update:
+---
+
 这是一个24年9月的笔记，同步到我们新的仓库
 
 git reset 回退分支

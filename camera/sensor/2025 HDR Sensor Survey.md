@@ -1,3 +1,18 @@
+---
+type: artical
+status: done
+tags:
+  - camera
+  - sensor
+  - survey
+  - hdr
+rating: 0
+create: 2026-05-06
+publish: 2025
+url: 
+update:
+---
+
 原文：A Review of Recent Advances in High-Dynamic-Range CMOS Image Sensors
 本文回顾了 2019~2025的HDR技术
 

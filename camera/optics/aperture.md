@@ -1,3 +1,15 @@
+---
+type: note
+status: done
+tags:
+  - camera
+  - optics
+  - aperture
+rating: 0
+create: 2026-06-09
+update:
+---
+
 aperture stop 指的是镜头中的光圈，更专业一点叫法应该是孔径光阑，他是一个非常重要的概念，他的像甚至都有专门的概念：[[Entrance Pupil and Exit Pupil]]
 
 

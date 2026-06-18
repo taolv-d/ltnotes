@@ -1,3 +1,13 @@
+---
+type: note
+status: done
+tags:
+  - camera
+  - isp
+rating: 0
+create: 2026-06-02
+update:
+---
 
 1. 先用高通响应构造方向图 hpmap
 2. 在 R/B 点按 hpmap 决定 green 用水平、垂直还是四方向混合插值

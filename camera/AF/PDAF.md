@@ -1,3 +1,15 @@
+---
+type: note
+status: done
+tags:
+  - camera
+  - af
+  - pdaf
+rating: 0
+create: 2026-04-24
+update:
+---
+
 # PDAF 工作原理
 
 PD的工作原理已经有很多文章讲的很清楚了，这些文章可供参考：

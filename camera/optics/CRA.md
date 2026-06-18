@@ -1,3 +1,14 @@
+---
+type: note
+status: done
+tags:
+  - camera
+  - optics
+  - cra
+rating: 0
+create: 2026-06-09
+update:
+---
 
 ## CRA
 CRA 的全程是 Chief ray angle，他是镜头主光线（穿过光心的线）的夹角。为什么这么关心他，原因就是主光线决定了光束聚焦的位置和角度。

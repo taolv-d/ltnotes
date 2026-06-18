@@ -1,3 +1,15 @@
+---
+type: note
+status: done
+tags:
+  - machine-learning
+  - backbone
+  - cnn
+rating: 0
+create: 2026-04-21
+update:
+---
+
 # V1
 假设输入是 224x224x3，width_multiplier=1：
 
