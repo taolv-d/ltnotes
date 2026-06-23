@@ -5,7 +5,6 @@ tags:
   - camera
   - sensor
   - noise
-  - git
 rating: 0
 create: 2026-05-21
 update:

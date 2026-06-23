@@ -4,12 +4,10 @@ status: done
 tags:
   - machine-learning
   - backbone
-  - cnn
 rating: 0
 create: 2026-04-23
 update: 2026-06-18
 ---
-
 # VGG
 
 VGG 证明了将简单的结构多次堆叠可以有效提升网络性能。
