@@ -4,6 +4,7 @@ status: done
 tags:
   - camera
   - isp
+  - demosaic
 rating: 0
 create: 2026-06-02
 update:
