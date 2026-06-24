@@ -8,9 +8,6 @@ rating: 0
 create: 2026-04-22
 update:
 ---
-
-[[../../TODO|TODO]]
-
 **M-估计量（M-estimator）** 是“最大似然型估计量”（Maximum-likelihood-like estimator）的缩写，由统计学家 Peter Huber 在 1964 年正式提出。
 
 任何通过最小化$\sum\rho(y_i-\hat{y}_i)$  或 $E[\rho(r)]$ 来估计参数的损失函数，都属于 **M-估计量** 的范畴。

@@ -9,7 +9,7 @@ tags:
 rating: 0
 create: 2026-05-06
 publish: 2025
-url: 
+url: https://www.mdpi.com/2674-0729/4/1/8
 update:
 ---
 
