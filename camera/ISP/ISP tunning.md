@@ -177,7 +177,7 @@ Exposure convergence 收敛速度（vs 稳定性）
 
 ## AWB 标定
 
-[[AWB calibration]]
+[[AWB/AWB calibration]]
 
 # 12AF
 

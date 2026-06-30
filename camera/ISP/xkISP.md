@@ -72,7 +72,7 @@ for each pixel p:
 
 ## AWB
 
-这里找白点的算法： Grey World、White Patch、Shades of Grey，以及饱和像素剔除。参考[[AWB algorithm]]
+这里找白点的算法： Grey World、White Patch、Shades of Grey，以及饱和像素剔除。参考[[AWB/AWB algorithm]]
 
 校正过程
 

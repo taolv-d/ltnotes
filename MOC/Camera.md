@@ -23,7 +23,7 @@
 - [[../camera/ISP/2025 MLLM ISP Tuning|2025 MLLM ISP Tuning]]
 - [[../camera/ISP/【读书笔记】Single Sensor Imaging Methods and Applications for Digital Cameras Image Processing Series|Single Sensor Imaging Methods and Applications for Digital Cameras]]
 - [[../camera/AF/PDAF|PDAF]]
-- [[../camera/ISP/AWB calibration|AWB calibration]]
+- [[../camera/ISP/AWB/AWB calibration|AWB calibration]]
 
 ## 色彩
 
