@@ -1,0 +1,12 @@
+# 默认所有文件都当成二进制，Git 不要乱改
+* -text
+
+# 只有这些明确的文本文件才启用换行符转换
+*.md text eol=lf
+*.markdown text eol=lf
+*.txt text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+*.json text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
