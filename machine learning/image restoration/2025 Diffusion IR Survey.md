@@ -8,13 +8,13 @@ tags:
 rating: 0
 create: 2026-05-13
 publish: 2025
-url: 
+url: https://arxiv.org/abs/2308.09388
 update:
 ---
 
 原文：Diffusion Models for Image Restoration and Enhancement: A Comprehensive Survey
 
-![[nn积木/attachments/Pasted image 20260512161241.png]]
+![[attachments/Pasted image 20260512161241.png]]
 
 这是第一篇关于扩散模型的综述，从作者单位看含金量可以
 
@@ -206,7 +206,7 @@ DDPM是从**纯粹的噪声**出发，最后生成的图像是随机的。但图
 
 **潜空间生成**
 
-[[image_synthesis/2022 Stable Diffusion|2022 Stable Diffusion]]
+[[../image synthesis/2022 Stable Diffusion|2022 Stable Diffusion]]
 
 - 它不直接在像素层面扩散，而是先训练一个强力的**自编码器**（由编码器 E 和解码器 D 组成）。编码器 `E` 把高维的图像压缩到一个极小的低维潜空间，扩散模型在这个小空间里工作，生成潜空间特征。最后再把生成的潜特征，通过解码器 `D` 变回高清像素图。
 - **优势**：计算量和显存占用指数级下降，使得在大规模数据上训练扩散模型变得可行。
@@ -297,7 +297,7 @@ DDPM是从**纯粹的噪声**出发，最后生成的图像是随机的。但图
 	
 	- 逆向生成器：再用另一个生成器，将刚才生成的无雨图 -> 重建回有雨图。使用循环一致性损失，在非配对数据下学会剥离雨层。
 	
-	- cycleGAN 见[[2022 GAN SR Survey]]
+	- cycleGAN 见[[image super-resolution/2022 GAN SR Survey]]
 
 
 4. **畸变不变扩散模型**：目标是让扩散模型学习一个对各类退化都不敏感的特征。

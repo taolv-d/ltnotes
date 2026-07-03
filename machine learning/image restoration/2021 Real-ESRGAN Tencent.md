@@ -8,7 +8,7 @@ tags:
 rating: 0
 create: 2026-04-17
 publish: 2021
-url:
+url: https://ieeexplore.ieee.org/document/9607421
 update:
 ---
 
@@ -27,7 +27,7 @@ update:
 - **损失函数与权重**：组合使用 **L1 Loss**、**感知损失** 和 **GAN Loss**，论文给出的权重比例为 **{1, 1, 0.1}** 。
 
 ## 网络架构
-生成器[[2018 RRDBNet ESRGAN Tencent]]
+生成器[[../image super-resolution/2018 RRDBNet ESRGAN Tencent]]
 
 ## 修改成1：1时出现格子纹问题：
 

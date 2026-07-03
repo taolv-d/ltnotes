@@ -9,7 +9,7 @@ rating: 0
 create: 2026-05-11
 update:
 publish: 2022
-url:
+url: https://arxiv.org/abs/2204.13620
 ---
 
 原文：Generative Adversarial Networks for Image Super-Resolution: A Survey

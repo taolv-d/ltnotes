@@ -7,11 +7,11 @@ tags:
 rating: 0
 create: 2026-04-23
 publish: 2022
-url: https://github.com/megvii-research/NAFNet?utm_source=chatgpt.com
+url: https://arxiv.org/abs/2204.04676
 update:
 ---
 
-[megvii-research/NAFNet: The state-of-the-art image restoration model without nonlinear activation functions.](https://github.com/megvii-research/NAFNet?utm_source=chatgpt.com)
+github 代码：[GitHub - megvii-research/NAFNet: The state-of-the-art image restoration model without nonlinear activation functions. · GitHub](https://github.com/megvii-research/NAFNet)
 
 NAFNet 本质上是一个很干净的 U-Net 式图像复原网络。它的整体思路可以概括成：
 

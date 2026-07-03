@@ -15,7 +15,7 @@ url: https://arxiv.org/abs/2502.20824
 
 [[../../TODO|TODO]]
 
-![[../image restoration/attachments/Pasted image 20260427173328.png]]
+![[attachments/Pasted image 20260427173328.png]]
 
 ---
 

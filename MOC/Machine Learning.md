@@ -40,12 +40,12 @@
 
 ## 生成与复原
 
-- [[../machine learning/image restoration/2018 RRDBNet ESRGAN Tencent|2018 RRDBNet ESRGAN Tencent]]
+- [[../machine learning/image super-resolution/2018 RRDBNet ESRGAN Tencent|2018 RRDBNet ESRGAN Tencent]]
 - [[../machine learning/image restoration/2021 Real-ESRGAN Tencent|2021 Real-ESRGAN Tencent]]
 - [[../machine learning/image restoration/2022 NAFNet Megvii|2022 NAFNet Megvii]]
 - [[../machine learning/image restoration/2024 MambaIR|2024 MambaIR]]
-- [[../machine learning/2025 Diffusion IR Survey|2025 Diffusion IR Survey]]
-- [[../machine learning/2022 GAN SR Survey|2022 GAN SR Survey]]
+- [[../machine learning/image restoration/2025 Diffusion IR Survey|2025 Diffusion IR Survey]]
+- [[../machine learning/image super-resolution/2022 GAN SR Survey|2022 GAN SR Survey]]
 - [[../machine learning/2025 Video Quality Improvement Survey|2025 Video Quality Improvement Survey]]
 
 

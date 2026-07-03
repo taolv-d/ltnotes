@@ -3,12 +3,11 @@ type: artical
 status: done
 tags:
   - ML
-  - IR
   - gan
 rating: 0
 create: 2026-04-17
 publish: 2018
-url:
+url: https://arxiv.org/abs/1809.00219
 update:
 ---
 
