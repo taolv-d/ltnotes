@@ -1,20 +1,21 @@
 ---
 type: artical
-status: done
+status: draft
 tags:
-  - machine-learning
-  - image-restoration
+  - ML
+  - IR
   - gan
 rating: 0
 create: 2026-04-27
-publish: 2025
-url: 
 update:
+publish: 2025
+url: https://arxiv.org/abs/2502.20824
 ---
+本文主要针对智能手机的多帧超分问题。
 
 [[../../TODO|TODO]]
 
-![[attachments/Pasted image 20260427173328.png]]
+![[../image restoration/attachments/Pasted image 20260427173328.png]]
 
 ---
 

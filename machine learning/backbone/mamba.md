@@ -10,7 +10,7 @@ create: 2026-04-25
 update: 2026-06-26
 url: https://arxiv.org/abs/2312.00752
 ---
-mamba 是一类模型家族，正统是SSM发展而来的。图像领域还有类似 ViT、Swin 这种将Transformer 改造成适用图像的 vision-mamba。
+Mamba 是一类模型家族，正统是SSM发展而来的。图像领域还有类似 ViT、Swin 这种将Transformer 改造成适用图像的 vision-mamba。
 
 这里主要介绍 SSM 发展过来的正统mamba 跟 vision mamba
 

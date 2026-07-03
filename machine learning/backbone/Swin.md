@@ -1,10 +1,10 @@
 ---
 type: artical
-status:
+status: todo
 tags:
   - 
 rating: 0
-create: YYYY-MM-DD
+create:
 update:
 publish:
 url:

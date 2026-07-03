@@ -75,7 +75,7 @@ url:
 
 1. 早期GAN只有几层卷机
 2. 提升网络深度 + 残差连接
-3. 密集连接（Dense Connection），缓解难训的问题。**代表**：RRDB（ESRGAN的核心）[[图像修复、超分/2021 Real-ESRGAN Tencent|2021 Real-ESRGAN Tencent]]
+3. 密集连接（Dense Connection），缓解难训的问题。**代表**：RRDB（ESRGAN的核心）[[image restoration/2021 Real-ESRGAN Tencent|2021 Real-ESRGAN Tencent]]
 ```text
 每一层都接收之前所有层的输出
 

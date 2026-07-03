@@ -2,7 +2,8 @@
 type: artical
 status: todo
 tags:
-  - machine-learning
+  - ML
+  - IR
 rating: 0
 create: 2026-04-23
 publish: 2022

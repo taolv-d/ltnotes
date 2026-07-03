@@ -2,12 +2,13 @@
 type: artical
 status: done
 tags:
-  - machine-learning
+  - ML
+  - IR
   - gan
 rating: 0
 create: 2026-04-17
 publish: 2021
-url: 
+url:
 update:
 ---
 

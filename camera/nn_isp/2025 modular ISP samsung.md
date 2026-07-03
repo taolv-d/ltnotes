@@ -28,9 +28,7 @@ Modular Neural Image Signal Processing
 ```
 
 可学习部分：
-**raw denoising** : [[../../machine learning/图像修复、超分/2022 NAFNet Megvii|NAFNet]]
-
-**AWB + CCM** : 未指定色温就用模型的结果
+**raw denoising** : [[../../mach[[../../machine learning/image restoration/2022 NAFNet Megvii|NAFNet]]M** : 未指定色温就用模型的结果
 
 **photofinishing 风格渲染**，顺序预测并应用一组 ISP 风格参数（下采样省算力）：
 1. GainNet：预测数字增益
