@@ -9,7 +9,7 @@ rating: 0
 create: 2026-06-30
 update:
 ---
-
+[[../../../TODO|TODO]]
 [White balance Auto - new algorithm Itcwb · Issue #4650 · RawTherapee/RawTherapee](https://github.com/RawTherapee/RawTherapee/issues/4650)
 
 
