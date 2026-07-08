@@ -29,11 +29,11 @@ url: https://imagesensors.org/Past%20Workshops/2021%20Workshop/2021%20Papers/R01
 
 ![[attachments/Pasted image 20260706143159.png]]
 
-![[attachments/Pasted image 20260706143214.png]]
+![[../AF/attachments/Pasted image 20260706143214.png]]
 
-![[attachments/Pasted image 20260706143227.png]]
+![[../AF/attachments/Pasted image 20260706143227.png]]
 
-![[attachments/Pasted image 20260706143245.png]]
+![[../AF/attachments/Pasted image 20260706143245.png]]
 
 ![[attachments/Pasted image 20260706143323.png]]
 

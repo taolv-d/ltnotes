@@ -36,7 +36,33 @@ PD的工作原理已经有很多文章讲的很清楚了，这些文章可供参
 1. *masked* PDAF
 2. *On-Chip Lens (OCL)*
 3. *Dual Photodiode (DP)*
-[[../../TODO|TODO]] IISS 描述移到这里
+
+下面介绍中的配图来源于 IISS 的CMOS 报告：[[../sensor/2021 CIS (IISS)|2021 CIS (IISS)]]
+
+***masked* PDAF**
+下图是mask PDAF 的示意图。通常它们都是左右分布的（横向纹理无法对焦），但是也有上下分布的，甚至斜向分布的，早期单反相机中的对焦传感器内部就是这种mask pixel。
+这些被遮挡的pixel 通常被当作坏点，一般在ISP 的静态坏点矫正中差值（ISP 会对PD像素添加专门的模式，只需要配置PD 的起始像素、行列规律即可）。
+![[attachments/Pasted image 20260706143214.png|540]]
+
+***On-Chip Lens (OCL)***
+OCL 技术是手机卷像素配套出现的技术，不过目前看来好像已经在被 DP 技术替代。
+OCL 做法是让两个或者四个 pixel 公用一个微透镜，这样每个像素就是左/右PD像素了。
+![[attachments/Pasted image 20260706143227.png|515]]
+
+***Dual Photodiode (DP)***
+DP 技术更近一步，把原来一个pixel 劈成左右像素，这样就能实现全像素对焦。像索尼的8 PD 技术，一个微透镜下有4个pixel（高亮场景，借助remosaic输出全分辨率，暗光时四个pixel 合并为一个pixel输出提高信噪比）。每个pixel 又分为左右PD，这样就实现了全像素对焦（不过需要标定密闭pixel 制造时的感度差异）。
+关于remosaic: [[../ISP/remosaic/remosaic|remosaic]]
+![[attachments/Pasted image 20260706143245.png|570]]
+
+# PDAF 中 type 是啥
+
+PDAF 文档中说的type1 type2 type3 主要指的是数据在哪里处理，具体参考下表：
+
+|       | spc    | AF     |
+| ----- | ------ | ------ |
+| type1 | sensor | sensor |
+| type2 | sensor | SoC    |
+| type3 | SoC    | SoC    |
 
 # PDAF 标定
 
@@ -70,7 +96,6 @@ DCC 标定环境通常是让camera 正对竖条纹图（或者菱形图），这
 ![[attachments/Pasted image 20260526231300.png]]
 
 最后，DCC map 通常会取6 * 8这样的分块大小（分块提升局部标定准确性），且通常标定参数由分块中心到边缘成均匀变化（这是由于系统中场曲存在的影响）
-
 
 # CRA mismatch 对PDAF的影响
 
