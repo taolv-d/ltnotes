@@ -32,7 +32,11 @@ PD的工作原理已经有很多文章讲的很清楚了，这些文章可供参
 
 # PDAF sensor 实现
 
-[[../../TODO|TODO]] 这里链接IISS的文章
+目前pdaf实现主要有三种：
+1. *masked* PDAF
+2. *On-Chip Lens (OCL)*
+3. *Dual Photodiode (DP)*
+[[../../TODO|TODO]] IISS 描述移到这里
 
 # PDAF 标定
 
