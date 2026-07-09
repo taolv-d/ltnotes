@@ -1,6 +1,6 @@
 ---
 type: note
-status: done
+status: draft
 tags:
   - computer
   - os
@@ -9,11 +9,8 @@ rating: 0
 create: 2026-05-21
 update:
 ---
-
 参考资料：
-
 中文翻译：https://ltfa1l.top/2023/09/23/system/Heap/understanding\_glibc\_malloc/
-
 英文原文：[Understanding glibc malloc](https://sploitfun.wordpress.com/2015/02/10/understanding-glibc-malloc/comment-page-1/)
 
 **重点：**

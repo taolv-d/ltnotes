@@ -1,6 +1,6 @@
 ---
 type: artical
-status: done
+status: draft
 tags:
   - camera
   - nn-isp
@@ -8,7 +8,7 @@ tags:
 rating: 0
 create: 2026-05-07
 publish: 2023
-url: 
+url:
 update:
 ---
 

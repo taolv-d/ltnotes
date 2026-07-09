@@ -1,13 +1,13 @@
 ---
 type: artical
-status: done
+status: draft
 tags:
   - camera
   - denoise
 rating: 0
 create: 2026-04-09
 publish: 2007
-url: 
+url:
 update:
 ---
 

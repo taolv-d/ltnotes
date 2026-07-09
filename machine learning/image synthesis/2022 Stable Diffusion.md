@@ -1,6 +1,6 @@
 ---
 type: artical
-status: done
+status: draft
 tags:
   - machine-learning
   - image-synthesis
@@ -8,7 +8,7 @@ tags:
 rating: 0
 create: 2026-05-14
 publish: 2022
-url: 
+url:
 update:
 ---
 

@@ -1,14 +1,14 @@
 ---
 type: artical
-status: done
+status: draft
 tags:
   - camera
   - optics
   - color
 rating: 0
 create: 2026-05-21
-publish: 
-url: 
+publish:
+url:
 update:
 ---
 

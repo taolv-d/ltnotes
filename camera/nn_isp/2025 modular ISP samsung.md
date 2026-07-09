@@ -1,6 +1,6 @@
 ---
 type: artical
-status: draft
+status: done
 tags:
   - camera
   - nn-isp

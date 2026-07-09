@@ -1,14 +1,14 @@
 ---
 type: artical
-status: done
+status: todo
 tags:
   - camera
   - optics
   - light
 rating: 0
 create: 2026-06-16
-publish: 
-url: 
+publish:
+url:
 update:
 ---
 

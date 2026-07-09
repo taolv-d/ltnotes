@@ -9,7 +9,6 @@ rating: 0
 create: 2026-06-18
 update:
 ---
-
 ## pupil function
 pupil function 中文常翻译为 光瞳函数，孔径函数。它的数学表达式为：
 $$

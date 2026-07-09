@@ -1,10 +1,10 @@
 ---
 type: note
-status:
+status: todo
 tags:
-  -
+  - 
 rating: 0
-create: 
+create:
 update:
 ---
 [[TODO]]

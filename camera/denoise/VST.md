@@ -1,6 +1,6 @@
 ---
 type: note
-status: done
+status: todo
 tags:
   - camera
   - denoise

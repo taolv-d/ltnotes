@@ -11,7 +11,6 @@ update:
 aliases:
   - CIS
 ---
-
 # 1. CIS 制造工艺
 
 CIS 一个pixel的组成：光电二极管/晶体管、bayer滤镜、微透镜

@@ -1,6 +1,6 @@
 ---
 type: note
-status: done
+status: todo
 tags:
   - machine-learning
   - nn-block
@@ -9,6 +9,7 @@ rating: 0
 create: 2026-04-14
 update:
 ---
+[[../../TODO|TODO]]移动到激活函数中
 
 Softplus 是一个**平滑版的 ReLU**，公式是：`Softplus(x) = log(1 + exp(x))`
 
