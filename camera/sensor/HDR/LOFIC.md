@@ -29,9 +29,9 @@ LOFIC的工作时序参考下图（N2 对应强光，N1 对应弱光）：
 1. **HCG**：t4~t6 这三步操作对应的是暗光场景，没有出现电荷溢出时的情况。跟传统的CIS CDS 流程一致。不过如果是强光，这里采集到的信号经过CDS 后应该变成0了。
 2. **LCG**：t2 t7 两步对应的是强光场景，此时电容是Cfd+Cs。这里的问题是噪声跟带噪信号之间间隔太长了，因此这里噪声不具备相关性。这里减噪声操作被称为DDS（差分双采样）。DDS 抑制噪声能力弱很多，这也是后续改进的主要方向。
 
-另外，LCG 转换这里用了更大的电容，那么转换增益会变小，后级用同一个ADC 采样，对应这里的分辨率势必会更低。不过这刚好与人眼特性匹配上了（人对亮度的变化是波动超过1%才能察觉，对应亮区需要亮度变化很大人眼才能感知，参考[[../optics/color/影视从业者对色彩的理解：Color science and digital image|影视从业者对色彩的理解：Color science and digital image]]）。因此LOFIC这里降低分辨率实际影响并不大。
+另外，LCG 转换这里用了更大的电容，那么转换增益会变小，后级用同一个ADC 采样，对应这里的分辨率势必会更低。不过这刚好与人眼特性匹配上了（人对亮度的变化是波动超过1%才能察觉，对应亮区需要亮度变化很大人眼才能感知，参考[[../../optics/color/影视从业者对色彩的理解：Color science and digital image|影视从业者对色彩的理解：Color science and digital image]]）。因此LOFIC这里降低分辨率实际影响并不大。
 
 # LOFIC 升级
 
-[[2020 Two-Stage LOFIC]] 这篇文章设计了两个 LOFIC 电容，实现LCG MCG HCG 三种转换增益
-[[2025  3Q HDR DPS]] 这篇文章将LOCIF跟TTS融合，当LOFIC溢出时，用TTS得到实际的信号强度
+[[HDR/2020 Two-Stage LOFIC]] 这篇文章设计了两个 LOFIC 电容，实现LCG MCG HCG 三种转换增益
+[[HDR/2025  3Q HDR DPS]] 这篇文章将LOCIF跟TTS融合，当LOFIC溢出时，用TTS得到实际的信号强度

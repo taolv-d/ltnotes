@@ -40,7 +40,7 @@ analog 的一篇技术报告比较了各种ADC：[A Simple ADC Comparison Matrix
 
 # ADC 位数选择
 
-**噪声对 ADC 的影响**：参考[[芝加哥大学：Noise DR Bit Depth in Digital SLRs]]
+**噪声对 ADC 的影响**：参考[[noise/芝加哥大学：Noise DR Bit Depth in Digital SLRs]]
 > 这里主要考虑噪声，在全黑环境下，sensor只有暗噪声，此时可以认为是最弱的噪声水平。
 > 1. 如果ADC的分辨率比这个噪声水平（图像标准差）精细很多，更精细的分辨也是噪声，对提升图像质量没有帮助。
 > 2. 如果ADC的分辨率比这个噪声水平粗略很多，此时ADC分辨率不足，就会出现等高线效应。

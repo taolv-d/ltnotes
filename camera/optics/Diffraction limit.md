@@ -12,7 +12,7 @@ update:
 
 ## 衍射极限
 衍射极限是光的物理性质，衍射极限与镜头的NA(或者F数)密切相关。
-这个页面有讨论孔径角与衍射极限的关系 [[Entrance Pupil and Exit Pupil]]
+这个页面有讨论孔径角与衍射极限的关系 [[Pupil/Entrance Pupil and Exit Pupil]]
 
 下图中，中心衍射条纹的尺寸为 $R=0.61\lambda/NA$
 ![[attachments/2024-01-07-14-34-04-image.png|380]]

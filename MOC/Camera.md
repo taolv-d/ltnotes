@@ -8,8 +8,8 @@
 - [[../camera/光学成像系统|光学成像系统]]
 - [[../camera/数码相机中的图像传感器和信号处理|数码相机中的图像传感器和信号处理]]
 - [[../camera/optics/light/坎德拉、流明、勒克斯？|坎德拉、流明、勒克斯？]]
-- [[../camera/sensor/2025 HDR Sensor Survey|2025 HDR Sensor Survey]]
-- [[../camera/sensor/芝加哥大学：Noise DR Bit Depth in Digital SLRs|芝加哥大学：Noise DR Bit Depth in Digital SLRs]]
+- [[../camera/sensor/HDR/2025 HDR Sensor Survey|2025 HDR Sensor Survey]]
+- [[../camera/sensor/noise/芝加哥大学：Noise DR Bit Depth in Digital SLRs|芝加哥大学：Noise DR Bit Depth in Digital SLRs]]
 - [[../camera/TOF/TOF 总结|TOF 总结]]
 - [[../camera/TOF/dtof|dtof]]
 - [[../camera/sensor/ADC in sensor|ADC in sensor]]
@@ -49,6 +49,6 @@
 
 ## NN ISP
 
-- [[../camera/nn_isp/2023 nn ISP Survey|2023 nn ISP Survey]]
-- [[../camera/nn_isp/2025 CANS|2025 CANS]]
-- [[../camera/nn_isp/2025 modular ISP samsung|2025 modular ISP samsung]]
+- [[../camera/NN_ISP/2023 nn ISP Survey|2023 nn ISP Survey]]
+- [[../camera/NN_ISP/2025 CANS|2025 CANS]]
+- [[../camera/NN_ISP/2025 modular ISP samsung|2025 modular ISP samsung]]

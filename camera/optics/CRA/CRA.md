@@ -32,7 +32,7 @@ CRA 的全程是 Chief ray angle，他是镜头主光线（穿过光心的线）
 CRA mismatch 会造成 luma shading 跟 color shading，因此CRA匹配需要在 3°，极限5°可能已经很难矫正了。
 
 CRA mismatch 的影响见 [[CRA mismatch]]
-此外，CRA mismatch 也会影响PD对焦 [[../AF/PDAF|PDAF]]
+此外，CRA mismatch 也会影响PD对焦 [[../../AF/PDAF|PDAF]]
 
 
 ## CRA改进

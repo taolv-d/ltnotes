@@ -10,13 +10,13 @@ create: 2026-04-09
 update:
 ---
 
-CRA 的前置知识参考 [[../sensor/CMOS image sensor（CIS）|CMOS image sensor（CIS）]]  以及 [[CRA]]
+CRA 的前置知识参考 [[../../sensor/CMOS image sensor（CIS）|CMOS image sensor（CIS）]]  以及 [[CRA/CRA]]
 
 图片来自：[射线光学模拟 - PhyDemo](。https://phydemo.app/ray-optics/cn/)
 
 ## Luma shading、color shading
 
-![[attachments/Pasted image 20260529182849.png]]
+![[../attachments/Pasted image 20260529182849.png]]
 
 上图是一个通过shift micro lens 改变sensor CRA 的示意图（这里位于整个sensor的左侧，画面底部的棕色部分为sensor的感光位置）。图中三束光线分别为：
 - 中间光束是CRA match 状态的，他的光线打到自己的感光区域上。
@@ -54,4 +54,4 @@ color shading 的真实表现可以参考下图：
 · 解决思路：换CRA更小的镜头；或与Sensor厂联合调试微透镜偏移方案；ISP端启用去紫边/高光溢出抑制算法。  
 · 修复难度：困难
 
-此外，CRA mismatch 也会影响到PD，具体见 [[../AF/PDAF|PDAF]]
+此外，CRA mismatch 也会影响到PD，具体见 [[../../AF/PDAF|PDAF]]

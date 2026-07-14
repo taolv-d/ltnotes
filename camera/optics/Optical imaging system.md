@@ -40,7 +40,7 @@ update:
 ![[attachments/2024-01-07-13-49-39-image.png]]
 **入瞳**从物方向镜头里面看到的光圈的虚像
 **出瞳**从像方向镜头里面看到的光圈的实像
-更深入的介绍见：[[Entrance Pupil and Exit Pupil]]
+更深入的介绍见：[[Pupil/Entrance Pupil and Exit Pupil]]
 
 ****
 
@@ -129,8 +129,8 @@ $$
 ****
 ### CRA
 
-CRA 的更多描述见 [[CRA]]
-CRA mismatch 的分析见 [[CRA mismatch]]
+CRA 的更多描述见 [[CRA/CRA]]
+CRA mismatch 的分析见 [[CRA/CRA mismatch]]
 
 成像面上主光线与光轴的夹角，包括 lens CRA 和 sensor CRA
 ![[attachments/2024-01-07-14-04-59-image.png]]
