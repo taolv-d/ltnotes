@@ -12,7 +12,7 @@
 - [[../machine learning/backbone/ViT|ViT]]
 - [[../machine learning/backbone/Mamba|Mamba]]
 - [[../machine learning/2015 U-Net|2015 U-Net]]
-- [[../machine learning/yolo|yolo]]
+- [[../machine learning/object detection/yolo|yolo]]
 
 ## 神经网络积木
 

@@ -1,14 +1,12 @@
 ---
 type: artical
-status:
+status: todo
 tags:
   - 
 rating: 0
-create:
+create: 2026-07-20
 update:
-publish:
-url:
+publish: 2023-01-01
+url: https://arxiv.org/abs/1905.05055
 ---
-
-TODO
-https://www.arxiv.org/overview/1905.05055
+[[../../TODO|TODO]]

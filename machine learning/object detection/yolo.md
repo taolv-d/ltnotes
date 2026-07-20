@@ -9,7 +9,7 @@ create: 2026-04-14
 update:
 ---
 
-[[../TODO|TODO]]
+[[../../TODO|TODO]]
 # yolov8 detect
 我们就从最经典、最适合入门的 YOLOv8 detect 讲起，也就是这个配置：ultralytics/cfg/models/v8/yolov8.yaml。你可以先把它理解成一句话：
 
