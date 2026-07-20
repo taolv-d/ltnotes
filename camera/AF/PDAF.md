@@ -131,3 +131,7 @@ CRA mismatch 对PDAF的影响远比想像的大，那怕这种不匹配在主画
 1. 在中心位置时，CRA 偏差比较小，系统近似正常系统，对应DCC曲线也是正常的
 2. 从中心向边缘市场移动时，CRA差异变大，这个差异造成原本聚焦在左PD上的光线向右PD移动（见上面论文中的示意图），同时也会上相邻sensor中原本打在右PD上的光线向自己的左PD移动，此时就会出现光线刚好照在两个大pixel中间，实际进入PD的信号最弱，信噪比最差，同时PD系统假设的左右相位差也完全失效。此时你看左右图像中对应位置，无论离焦程度如何，图像仍处于对其状态。你的DCC map 此处就是一个混乱的状态。显然这里不能用于PDAF对焦。
 3. 继续向边缘视场移动，CRA mismatch 的影响已经让原本打在右PD的光进入到左PD了，即左右PD图像的相位变化在这里反转了，你就会看到DCC曲线的极性在边缘区域发生反转。不过这里仍然能够用于PDAF对焦，只需要处理下斜率就行了
+
+# see also
+
+用仿真软件模拟PD工作原理，这里没有sensor:[how-it-works-on-sensor-phase-detect-autofocus](https://blog.reikanfocal.com/2023/05/how-it-works-on-sensor-phase-detect-autofocus/)
