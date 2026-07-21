@@ -1,6 +1,6 @@
 ---
 type: artical
-status: draft
+status: done
 tags:
   - camera
   - nn-isp
@@ -10,7 +10,6 @@ update:
 publish: 2026-09-11
 url: https://arxiv.org/abs/2509.09183
 ---
-
 原文：Dark-ISP: Enhancing RAW Image Processing for Low-Light Object Detection
 
 本文主要是针对 暗光场景 object-detection 任务设计了一个轻量化ISP，主要有以下特点：
@@ -53,9 +52,8 @@ F(x_{ij})=\sum_{k=0}^{n}C_k(i,j)f_k(x_{ij})
 $$
 网络预测$C_k(ij)$
 本文选用的曲线基函数如下：
-![](./attachments/dark-isp-image-1.png)
-
-另外，Nonlinear 后接了一个 softmax，目的是确保 1. 避免数值溢出，2. 遵守ISP"能量守恒"
+![508](./attachments/dark-isp-image-1.png)
+另外，Nonlinear 后接了一个 Softmax，目的是确保 1. 避免数值溢出，2. 遵守ISP"能量守恒"
 
 # Self-Boost Regularzation
 

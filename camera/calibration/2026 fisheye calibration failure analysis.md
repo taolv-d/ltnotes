@@ -10,7 +10,6 @@ update:
 publish: 2026-01-01
 url: https://arxiv.org/abs/2607.05777
 ---
-
 原文：Observation Quality Matters: Robust Multi-Fisheye Calibration via Failure-Oriented Analysis
 
 本文对工业上司空见惯的做法（标定板斜着放，提点覆盖全等）做了严谨的问题分析，找到了经验背后的原理，值得一看。
