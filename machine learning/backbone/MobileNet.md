@@ -128,7 +128,7 @@ V3 的典型 block 是：
 - ReLU
 - h-swish [[../nn积木/激活函数汇总|激活函数汇总]]
 
-SE 不是每个 block 都有，是部分 block 有。[[../nn积木/SE 通道注意力|SE 通道注意力]]
+SE 不是每个 block 都有，是部分 block 有。[[../nn积木/SE Squeeze-and-Excitation|SE Squeeze-and-Excitation]]
 
 ---
 

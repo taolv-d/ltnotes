@@ -10,7 +10,7 @@ create: 2026-04-14
 update:
 ---
 
-CoordinateAttention 是一种**注意力模块**，可以理解成“比 SE[[SE 通道注意力]] 更保留位置信息的通道注意力”。
+CoordinateAttention 是一种**注意力模块**，可以理解成“比 SE[[SE Squeeze-and-Excitation]] 更保留位置信息的通道注意力”。
 
 普通的通道注意力，比如 SE，常见做法是：
 

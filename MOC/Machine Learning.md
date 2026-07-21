@@ -21,7 +21,7 @@
 - [[../machine learning/nn积木/C2f|C2f]]
 - [[../machine learning/nn积木/DSC 深度可分离卷积|DSC 深度可分离卷积]]
 - [[../machine learning/nn积木/MultiBranchConvBlock|MultiBranchConvBlock]]
-- [[../machine learning/nn积木/SE 通道注意力|SE 通道注意力]]
+- [[../machine learning/nn积木/SE Squeeze-and-Excitation|SE Squeeze-and-Excitation]]
 - [[../machine learning/nn积木/CoordinateAttention|CoordinateAttention]]
 - [[../machine learning/nn积木/Neck|Neck]]
 - [[../machine learning/nn积木/SPPF|SPPF]]
