@@ -96,23 +96,23 @@ yaml
 
 这里你要抓住两个核心模块：
 
-- [[nn积木/Conv block|Conv block]] 
+- [[../nn积木/Conv block|Conv block]] 
 	- Conv2d + BatchNorm2d + SiLU
-- [[nn积木/C2f|C2f]]
+- [[../nn积木/C2f|C2f]]
 	- 先把通道分成两路
 	- 一路保留原始信息
 	- 一路经过多个 Bottleneck
 	- 最后把这些中间结果拼接起来，再做一次卷积融合
 
 
-[[SPPF]]
+[[../nn积木/SPPF]]
 - 不只是看当前位置附近一点点
 - 还想让网络“看得更大一点”
 - 通过多次池化，把更大范围的上下文混进来
 
 这对检测大目标、理解整体结构很有帮助。
 
-**Neck [[nn积木/Neck|Neck]]
+**Neck [[../nn积木/Neck|Neck]]
 head: 前半段其实是 neck，它做的是特征融合，不是最终输出。
 
 `- [-1, 1, nn.Upsample, [None, 2, "nearest"]] - [[-1, 6], 1, Concat, [1]] - [-1, 3, C2f, [512]]`

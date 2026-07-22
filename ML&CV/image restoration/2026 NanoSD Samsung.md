@@ -14,7 +14,7 @@ update:
 
 原文 NanoSD: Edge Efficient Foundation Model for Real Time Image Restoration
 
-![[../image restoration/attachments/Pasted image 20260512161427.png]]
+![[attachments/Pasted image 20260512161427.png]]
 
 ## 蒸馏SD1.5
 

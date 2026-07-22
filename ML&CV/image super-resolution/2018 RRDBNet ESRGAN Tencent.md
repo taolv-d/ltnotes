@@ -17,7 +17,7 @@ update:
 
 RRDBNet 网络结构整体类似VGG样式。
 
-![](./attachments/esrgan-image.png)
+![](attachments/esrgan-image.png)
 
 | 层级   | 组件            | 输入→输出通道 | 说明                                           |
 | ---- | ------------- | ------- | -------------------------------------------- |
@@ -34,7 +34,7 @@ RRDB 块如下图所示，其特点([[../nn积木/RRDB|RRDB]])：
   - **更小的初始化**：参数以比标准方法更小的方差进行初始化。
 2. 残差内残差密集块（RRDB）：这个新的构建块取代了标准残差块，并在多级残差结构中包含了密集连接。每个层都连接到所有前面的层，从而实现特征重用并增加网络容量。
 
-![](./attachments/esrgan-image-1.png)
+![](attachments/esrgan-image-1.png)
 
 # 相对鉴别器
 
@@ -44,7 +44,7 @@ L_{Ra}^D = -\mathbb{E}_{x_r}[\log(\sigma(D_{Ra}(x_r, x_f)))] - \mathbb{E}_{x_f}[
 $$
 其中 $D_{Ra}(x_r, x_f) = D(x_r) - \mathbb{E}_{x_f}[D(x_f)]$。
 
-![](./attachments/esrgan-image-3.png)
+![](attachments/esrgan-image-3.png)
 
 # 感知损失改进
 
@@ -54,7 +54,7 @@ L_{percep} = \frac{1}{W_{i,j}H_{i,j}} \sum_{x=1}^{W_{i,j}} \sum_{y=1}^{H_{i,j}} 
 $$
 其中 $\phi_{i,j}$ 代表VGG网络中激活前的特征。
 
-![](./attachments/esrgan-image-2.png)
+![](attachments/esrgan-image-2.png)
 
 为了平衡感知质量和保真度，ESRGAN引入了一种网络插值技术：
 $$

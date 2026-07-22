@@ -11,7 +11,7 @@ publish: 2024
 url: https://arxiv.org/abs/2402.15648
 update: 2026-07-03
 ---
-MambaIR 这篇文章的目的就是将 Mamba 的思想用到图像超分中去，这样就继承了Mamba的高效。Mamba 可以参考这个文章[[../backbone/Mamba|Mamba]]
+MambaIR 这篇文章的目的就是将 Mamba 的思想用到图像超分中去，这样就继承了Mamba的高效。Mamba 可以参考这个文章[[../backbone/mamba|mamba]]
 
 # V1
 

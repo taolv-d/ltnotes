@@ -23,7 +23,7 @@ url: https://openaccess.thecvf.com/content/CVPR2026F/supplemental/Zhang_CtrlISP_
 上图是本文的网络架构：
 1. **DenoiseNet**: 这部分是一个raw域降噪的网络，采用Unet架构，但引入了 1. **位置/ISO编码**，2. **注意力机制**
 	1. 位置/ISO编码这部分思想应该来源于Transformer中的位置编码，图中坐下虚线框描述了这部分，分别记录了X Y 坐标跟 ISO 信息，经过一个3x3 卷积提取特征后直接跟图像特征相加
-	2. Unet 中的标准卷积快被替换为 NAFBlock 引入通道注意力。[[../../machine learning/image restoration/2022 NAFNet Megvii|2022 NAFNet Megvii]]
+	2. Unet 中的标准卷积快被替换为 NAFBlock 引入通道注意力。[[../../ML&CV/image restoration/2022 NAFNet Megvii|2022 NAFNet Megvii]]
 			_“We adopt UNet as the base architecture, **introduce the Nonlinear Activation Free block** in [4] to replace ordinary convolutional blocks”_
 	3. 跳跃连接与瓶颈层中的转置自注意力,通过计算通道维度的协方差矩阵来捕获所有像素间的全局依赖关系，解决暗角噪声（Dark-shading）的长程空间相关问题
 			_“First, we introduce interaction blocks into the shortcut connections and latent layers of the U-Net-based DenoiseNet to enable global information exchange. **These blocks employ the transposed self-attention mechanism**, which enables the network to explicitly capture correlations between all pixel pairs, effectively overcoming the receptive field limitation and achieving genuine global information fusion.”_

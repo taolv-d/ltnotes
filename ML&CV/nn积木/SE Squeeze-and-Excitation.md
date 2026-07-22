@@ -17,7 +17,7 @@ update: 2026-07-21
 - 重要通道放大
 - 不重要通道压低
 
-![](./attachments/Pasted%20image%2020260425174458.png)
+![](attachments/Pasted%20image%2020260425174458.png)
 
 SE 执行过程(输入为$H*W*C$)参考上图：
 1. **挤压**：Global Average Pooling

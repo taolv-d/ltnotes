@@ -53,7 +53,7 @@ update: 2026-07-20
 PMRID 的网络结构就是“RAW 4通道输入 + ISO噪声归一化 + 轻量残差U-Net + 深度可分离卷积 + 全局残差输出”。整个网络没有 BatchNorm、没有 attention、没有 transformer。甚至将UNet中的concat 操作替换成直接相加
 
 - **基础框架**：4层编码器+4层解码器的 **U-Net** 结构。
-- **计算瘦身**：大量使用**深度可分离卷积**[[../../machine learning/nn积木/DSC 深度可分离卷积|DSC 深度可分离卷积]]，只在输入输出层用普通卷积。
+- **计算瘦身**：大量使用**深度可分离卷积**[[../../ML&CV/nn积木/DSC 深度可分离卷积|DSC 深度可分离卷积]]，只在输入输出层用普通卷积。
 ![[attachments/Pasted image 20260720231945.png]]
 # k-Sigma变换推导
 

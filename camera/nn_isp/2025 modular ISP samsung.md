@@ -33,7 +33,7 @@ JPEG/raw 回嵌这里与 ISP 主题差异比较大，这里不展开。
 
 # 可学习模块
 
-**raw denoising** : [[../../mach[[../../machine learning/image restoration/2022 NAFNet Megvii|NAFNet]] 架构全卷积网络，通常跟着相机走，论文搞了一个泛化性好一些的来适应
+**raw denoising** : [[../../mach[[../../ML&CV/image restoration/2022 NAFNet Megvii|NAFNet]] 架构全卷积网络，通常跟着相机走，论文搞了一个泛化性好一些的来适应
 **photofinishing 风格渲染**，顺序预测并应用一组 ISP 风格参数（下采样省算力）：
 1. GainNet：预测数字增益
 2. GlobalToneMappingNet：预测全局 tone mapping 参数

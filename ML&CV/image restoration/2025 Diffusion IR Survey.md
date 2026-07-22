@@ -89,7 +89,7 @@ $$
 
 3. **迭代推理**：即使网络本身能跑，1000步的去噪过程也会让总计算量变得巨大。
 
-**NanoSD**：作为专门为边缘设备设计的扩散模型家族[[image restoration/2026 NanoSD Samsung|2026 NanoSD Samsung]]
+**NanoSD**：作为专门为边缘设备设计的扩散模型家族[[2026 NanoSD Samsung|2026 NanoSD Samsung]]
 
 
 # 基础知识
@@ -297,7 +297,7 @@ DDPM是从**纯粹的噪声**出发，最后生成的图像是随机的。但图
 	
 	- 逆向生成器：再用另一个生成器，将刚才生成的无雨图 -> 重建回有雨图。使用循环一致性损失，在非配对数据下学会剥离雨层。
 	
-	- cycleGAN 见[[image super-resolution/2022 GAN SR Survey]]
+	- cycleGAN 见[[../image super-resolution/2022 GAN SR Survey]]
 
 
 4. **畸变不变扩散模型**：目标是让扩散模型学习一个对各类退化都不敏感的特征。

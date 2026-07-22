@@ -26,8 +26,8 @@ url: https://arxiv.org/abs/2204.13620
 # 训练范式
 
 本文提到的三种训练范式如今已有有比较广泛的应用，参考
-- [[low_light/2025 Low-Light Vision Survey]] 
-- [[2025 Video Quality Improvement Survey]]
+- [[../low_light/2025 Low-Light Vision Survey]] 
+- [[../2025 Video Quality Improvement Survey]]
 
 **监督式**：
 - 需要 (LR，HR) 图像对，将生成图跟高清图送给判别器识别真假
@@ -75,7 +75,7 @@ url: https://arxiv.org/abs/2204.13620
 
 1. 早期GAN只有几层卷机
 2. 提升网络深度 + 残差连接
-3. 密集连接（Dense Connection），缓解难训的问题。**代表**：RRDB（ESRGAN的核心）[[image restoration/2021 Real-ESRGAN Tencent|2021 Real-ESRGAN Tencent]]
+3. 密集连接（Dense Connection），缓解难训的问题。**代表**：RRDB（ESRGAN的核心）[[../image restoration/2021 Real-ESRGAN Tencent|2021 Real-ESRGAN Tencent]]
 ```text
 每一层都接收之前所有层的输出
 
