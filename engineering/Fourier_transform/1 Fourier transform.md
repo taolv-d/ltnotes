@@ -6,7 +6,7 @@ tags:
   - fourier-transform
 rating: 0
 create: 2026-06-09
-update:
+update: 2026-08-09
 ---
 直观理解，傅里叶变换就是将信号分解为一些列正弦波的组合。无论是一维（如声音）还是二维（如图像），都可以通过傅里叶变换分解为一些列正弦波的加权和。
 实际上，我们日常使用的 mp3 jpeg 等格式都利用傅里叶变化将高频部分压缩掉来优化文件体积。
@@ -57,6 +57,15 @@ $$
 
 ![[attachments/Pasted image 20260807222828.png]]
 
+## 共轭
+- 公式上共轭是把**虚部的符号反转**，即$a+jb$的共轭为$a-jb$
+- 几何上，相当于把复平面上的点**以实轴镜面翻转**
+- $e^{j\theta}$ 的共轭 $e^{-j\theta}$ 相当于**旋转方向反转**，模长不变，相位变号
+在傅里叶变换中有：
+- 实信号的共轭对称性，见[[1 Fourier transform#共轭对称性（实信号）]]
+- 能量计算，帕塞瓦尔定理
+- 匹配滤波器，最优检测器
+- 信号的内积与正交性：$\langle x,y\rangle=\int x(t)y^*(t)dt$ (取共轭的目的是为了内积结果为：模长* 模长 * 相位差，且非负)
 
 # 如何计算一个周期信号的傅里叶级数
 
@@ -72,7 +81,7 @@ $$
 ### 欧拉公式简化
 这里我们想要得到系数 $a_n,b_n$ ，注意到欧拉公式能够简化。直接把$\cos,\sin$ 两部分替换。得到：
 $$
-x(t)=a_0+\sum^\infty_{n=1}[a_n\frac{e^{jn\omega_0t}+e^{-jn\omega_0t}}{2}+b_n\frac{e^{jn\omega_0t}-e^{-jn\omega_0t}}{2j}]
+x(t)=a_0+\sum^\infty_{n=1}\left[a_n\frac{e^{jn\omega_0t}+e^{-jn\omega_0t}}{2}+b_n\frac{e^{jn\omega_0t}-e^{-jn\omega_0t}}{2j}\right]
 $$
 接下来将$e^{jn\omega_0t}, e^{-jn\omega_0t}$分开整理。这里其实可以发现 n 原来是$[1,\infty)$ ,这里想到与对称扩展到$-\infty$：
 - $e^{jn\omega_0t}$ 的系数变为(利用虚数的性质，参考前置)$$\frac{a_n-jb_n}{2}$$
@@ -165,11 +174,302 @@ $$
 x(t)=\frac{1}{2\pi}\int^\infty_{-\infty}{X(n\omega_0)}e^{jn\omega_0t}d\omega
 $$
 
+# 傅里叶变换的重要性质
+
+| 性质   | 时域                              | 频域                                                 | 直观理解           |
+| ---- | ------------------------------- | -------------------------------------------------- | -------------- |
+| 线性   | $ax+by$                         | $aX+bY$                                            | 信号相加，频谱也相加     |
+| 时移   | $x(t-t_0)$                      | $X(\omega)e^{-j\omega t_0}$                        |                |
+| 频移   | $x(t)e^{j\omega_0 t}$           | $X(\omega-\omega_0)$                               |                |
+| 尺度变换 | $x(at)$                         | $\frac{1}{\mid a \mid}X(j\frac{\omega}{a})$        | 时域扩展，频域收缩；反之亦然 |
+| 对偶   | $X(t)$                          | $2\pi x(-\omega)$                                  |                |
+| 时域卷积 | $x*y$                           | $X\cdot Y$                                         |                |
+| 频域卷积 | $x\cdot y$                      | $\frac{1}{2\pi}X*Y$                                |                |
+| 微分   | $x'(t)$                         | $j\omega X(\omega)$                                |                |
+| 积分   | $\int_{-\infty}^t x(\tau)d\tau$ | $\frac{X(\omega)}{j\omega}+\pi X(0)\delta(\omega)$ |                |
+
+**帕塞瓦尔定理（能量守恒）**
+$$
+\int_{-\infty}^{\infty}x(t)^2dt=\frac{1}{2\pi}\int_{-\infty}^{\infty}X(\omega)^2d\omega
+$$
+**实信号的共轭对称性**
+若$x(t)$ 是实信号，则 $X(−\omega)=X^∗(\omega)$
+频谱实部为偶函数，虚部为奇函数|
+## 性质的证明
+
+### 线性
+直接利用积分运算的线性性质即可证明
+对于 $ax(t)+by(t)$有
+$$
+\int[ax(t)+by(t)]e^{-j\omega t}dt
+=a\int x(t)e^{-j\omega t}dt
++b\int y(t)e^{-j\omega t}dt
+=aX(\omega)+bY(\omega)
+$$
+### 时移
+对$x(t-t_0)$做傅里叶变换有：
+$$
+\int_{-\infty}^{\infty}x(t-t_0)e^{-j\omega t}dt
+$$
+令$\tau=t-t_0$，代入得：
+$$
+\int_{-\infty}^{\infty}x(\tau)e^{-j\omega (\tau+t_0)}dt=X(\omega)e^{-j\omega t_0}
+$$
+### 频移
+对$x(t)e^{j\omega_0 t}$做傅里叶变换有：
+$$
+\int x(t)e^{j\omega_0 t}e^{-j\omega t}dt=\int x(t)e^{-j(\omega- \omega_0) t}dt=X(\omega-\omega_0)
+$$
+### 尺度变换
+对$x(at)$做傅里叶变换
+当$a>0$时
+$$
+\int x(at)e^{-j\omega t}dt
+$$
+令$\tau=at$，则:
+$$
+{\frac{1}{a}}\int x(\tau)e^{-j\omega \tau/a}d\tau=
+{\frac{1}{a}}X(\frac{\omega}{a})
+$$
+当$a<0$时，令$a=-{\mid a \mid}$，积分限会翻转，最终结果是${\frac{1}{\mid a \mid}}X{\omega/a}$
+### 对偶性质
+公式，如果：
+$$
+x(t)\leftrightarrow X(\omega)
+$$
+则：
+$$
+X(t) \leftrightarrow 2\pi{x(-\omega)}
+$$
+证明：
+从逆变换开始：
+$$
+x(t)={\frac{1}{2\pi}} {\int} {X{(\omega)} e^{j\omega t}} d\omega
+$$
+将$t$替换为$-t$，这里右侧积分已经变成 正变换的形式了：
+$$
+x(-t)={\frac{1}{2\pi}} {\int} {X{(\omega)} e^{-j\omega t}} d\omega
+$$
+变量名替换，用$\omega,t$ 互换：
+$$
+x(-\omega)={\frac{1}{2\pi}} {\int} {X{(t)} e^{-j\omega t}} dt
+$$
+即：$X(t) \leftrightarrow 2\pi{x(-\omega)}$
+### 卷积定理
+见后面卷积相关的推导
+### 微分性质
+公式：$x'(t) \leftrightarrow j\omega X(\omega)$
+推导：
+$$
+{\int_{-\infty}^\infty}x'(t)e^{-j\omega t}dt=[x(t)e^{-j\omega t}]_{-\infty}^\infty
+-\int_{-\infty}^\infty x(t)\cdot(-j\omega)e^{-j\omega t}dt
+$$
+对于真实物理信号，通常有$t\rightarrow\pm\infty, x(t)\rightarrow0$，即第一项为0，只剩下第二项，即：
+$$
+=j\omega \int_{-\infty}^\infty x(t)e^{-j\omega t}dt=j\omega X(\omega)
+$$
+### 积分性质
+公式：$\int_{-\infty}^t x(\tau)d\tau \leftrightarrow \frac{X(\omega)}{j\omega}+\pi X(0)\delta(\omega)$
+**利用微分定理证明（部分）**
+**积分性质不能直接用微分性质逆变换来证明，原因是微分变换时，直流分量（常数项）的微分为0，但积分中不是**
+这里简单介绍，不是严谨的数学推导
+我们利用微分性质+直流修正的方式证明，设$y(t)=\int_{-\infty}^{t} x(\tau)d\tau$，则$y'(t)=x(t)$
+两边做傅里叶变换，利用微分性质（直流修正是为了避免$\omega\neq0$时$X(\omega)$不为零引起矛盾）：
+$$
+X(\omega)=j\omega Y(\omega)+直流修正
+$$
+直流修正这里比较复杂，暂时先不计算
+
+**利用卷积**
+- 积分可以看作信号与阶跃函数的卷积[[../../TODO|TODO]]（放在卷积部分说明清楚）
+- 时域卷积，频域相乘
+- 阶跃函数的傅里叶变换为$u(t)\leftrightarrow \pi\delta(\omega)+\frac{1}{j\omega}$（后面有介绍）
+利用以上性质有：
+$$
+y(t)=\int x(t)dt=x(t)*u(t)
+$$
+频域有：
+$$
+\begin{split}
+Y(\omega)&=X(\omega)\left[{\pi\delta(\omega)+\frac{1}{j\omega}}\right]\\
+&=\frac{X(\omega)}{j\omega}+\pi X(0)\delta(\omega)
+\end{split}
+$$
+
+### 帕塞瓦尔定理
+推导：
+$$
+\int{\mid x(t) \mid}^2dt=\int x(t)x^*(t)dt
+$$
+用逆变换表示$x^*(t) = {\frac{1}{2\pi}}\int X^*(\omega)e^{-j\omega t}d\omega$，并带入得：
+$$
+\begin{split}
+\int x(t)\left[ {\frac{1}{2\pi}}\int X^*(\omega)e^{-j\omega t}d\omega\right] dt
+&= \frac{1}{2\pi}\int X^*(\omega)\left[ \int x(t)e^{-j\omega t}dt\right]d\omega \\
+&=\frac{1}{2\pi}\int X^*(\omega) X(\omega) d\omega \\
+&=\frac{1}{2\pi}\int{\mid X(\omega)\mid}^2 d\omega
+\end{split}
+$$
+### 共轭对称性（实信号）
+推导：
+对于实信号有$x(t)=x^*(t)$，$e^{-j\omega t}$的共轭为$e^{j\omega t}$
+
+$$
+\begin{split}
+X^*(\omega)&=\left[\int x(t) e^{-j\omega t}dt\right]^* \\
+&=\int x^*(t) e^{-j\omega t}dt \\
+&=\int x(t) e^{j\omega t}dt\\
+&=X(-\omega)
+\end{split}
+$$
+
+# 重要傅里叶变换对
+
+## 冲击函数
+
+冲击函数$\delta(t)$是在$t=0$时无穷大，在其他时刻为零，且积分为1的函数。
+- 冲激响应$h(t)$完全刻画了 LTI (线性时不变)系统，$H(\omega)$就是频率响应
+- 采样定理基于冲击函数推导
+- 任意信号可以看作无穷个冲击函数的叠加（卷积积分）
+### 变换对
+
+| 时域$x(t)$    | 频域$X(\omega)$        |
+| ----------- | -------------------- |
+| $\delta(t)$ | $1$                  |
+| $1$         | $2\pi\delta(\omega)$ |
+### 推导
+$$
+X(\omega)=\int_{-\infty}^\infty\delta(t)e^{-j\omega t}dt=e^0=1
+$$
+对于$x(t)=1$利用傅里叶变换的对偶性可直接得到（直接积份会震荡）。（其物理意义是，时域直流分量是频域中 频率为0 处的脉冲）
+
+## 梳状函数
+
+- 采样定理
+### 变换对
+| 时域$x(t)$                                | 频域$X(\omega)$                                                               |
+| --------------------------------------- | --------------------------------------------------------------------------- |
+| $\sum_{n=-\infty}^\infty\delta(t-nT_s)$ | $\omega_s\sum_{k=-\infty}^\infty\delta(\omega-k\omega_s),\omega_s=2\pi/T_s$ |
+### 推导
+
+时域冲击串是周期函数，直接用傅里叶变换公式套很难计算，可以先通过傅里叶级数的形式表示，然后多傅里叶级数表示做傅里叶变换
+**计算傅里叶级数**
+周期$T_s$，基频率$\omega_s=2\pi/T_s$
+$$
+c_k = \frac{1}{T_s}\int_{-T_s/2}^{T_s/2} \delta(t)e^{-jk\omega_st}dt
+=\frac{1}{T_s}
+$$
+则，用傅里叶级数表示$x(t)$:
+$$
+x(t)=\frac{1}{T_s}\sum_{k=-\infty}^\infty e^{jk\omega_st}
+$$
+**计算傅里叶变换**
+这里利用 冲击函数的傅里叶变换+时移频移 性质有$e^{jk\omega_s t}\leftrightarrow2\pi\delta(\omega-k\omega_s)$
+$$
+X(\omega)=\frac{2\pi}{T_s}\sum_{k=-\infty}^\infty\delta(\omega-k\omega_s)
+=\omega_s\sum_{k=-\infty}^\infty\delta(\omega-k\omega_s)
+$$
+
+## 指数衰减信号
+- RC 电路的频率响应
+### 变换对
+| 时域$x(t)$            | 频域$X(\omega)$             |
+| ------------------- | ------------------------- |
+| $e^{-at}u(t),a>0$   | $\frac{1}{a+j\omega}$     |
+| $e^{-a\mid t \mid}$ | $\frac{2a}{a^2+\omega^2}$ |
+
+### 推导
+**对于单边指数**
+$$
+\begin{split}
+X(\omega)&=\int_0^\infty e^{-at} e^{-jwt}dt\\
+&=\int_0^\infty e^{-(a+jw)t}dt\\
+&=\frac{1}{a+j\omega}
+\end{split}
+$$
+**对于双边指数**
+$$
+\begin{split}
+X(\omega)&=\int_{-\infty}^0 e^{at} e^{-jwt}dt + \int_0^{\infty}e^{-at} e^{-jwt}dt\\
+&=\frac{1}{a-j\omega} + \frac{1}{a+j\omega}\\
+&=\frac{2a}{a^2+\omega^2}
+\end{split}
+$$
+## 高斯函数
+- **唯一自对偶函数**：时域和频域都是高斯形，具有最优的时频聚集性
+### 变换对
+| 时域$x(t)$    | 频域$X(\omega)$                            |
+| ----------- | ---------------------------------------- |
+| $e^{-at^2}$ | $\sqrt{\frac{\pi}{a}}e^{-\omega^2/(4a)}$ |
+### 推导
+$$
+X(\omega)=\int_{-\infty}^{\infty}e^{-at^2} e^{-j\omega t}dt
+$$
+这里需要操作下指数，变成完全平方形式（第一部分用高斯积分公式，第二部分是常数）：
+$$
+-at^2-j\omega t=-a(t+\frac{j\omega}{2a})^2-\frac{\omega^2}{4a}
+$$
+利用高斯积分公式：$\int_{-\infty}^\infty e^{-a(t+b)^2}dt=\sqrt{\frac{\pi}{a}}$
+$$
+X(\omega)=\sqrt{\frac{\pi}{a}}e^{-\omega^2/(4a)}
+$$
+
+## 阶跃函数
+- 开关、控制系统常用
+- 积分可以看作信号与阶跃函数的卷积
+### 变换对
+
+| 时域$x(t)$ | 频域$X(\omega)$                         |
+| -------- | ------------------------------------- |
+| $u(t)$   | $\pi\delta(\omega)+\frac{1}{j\omega}$ |
+### 推导
+这里将阶跃函数分解为 直流 + 符号函数，即：
+$$
+u(t)=\frac{1}{2}+\frac{1}{2}sgn(t)
+$$
+直流部分已经在前面单位冲击函数部分推导了:$1\leftrightarrow2\pi\delta(\omega)$。
+符号函数推导较复杂，直接给出结果：$sgn(t)=\frac{2}{j\omega}$
+则：
+$$
+X(\omega)=\pi\delta(t)+\frac{1}{j\omega} 
+$$
+## 矩形脉冲
+矩形脉冲是非常重要的函数，理想采用矩形脉冲近似。它也解释了为什么无法实现理想低通滤波器、光学的衍射强度分布的规律
+### 变换对
+
+| 时域$x(t)$                                               | 频域$X(\omega)$                             |
+| ------------------------------------------------------ | ----------------------------------------- |
+| $x(t)=1,\mid t\mid, \mid t \mid \leq \tau/2$<br>其他情况为0 | $\tau\cdot sinc(\frac{\omega\tau}{2\pi})$ |
+### 推导
+这里利用了$\int e^{-j\omega t}dt=\frac{e^{-j\omega t}}{-j\omega}$
+$$
+\begin{split}
+X(\omega)&=\int_{-\tau/2}^{\tau/2} e^{-j\omega t}dt\\
+&=\frac{e^{-j\omega\tau/2}-e^{j\omega\tau/2}}{-j\omega}(带入积分上下限)\\
+&=\frac{-2j\sin(\omega\tau/2)}{-j\omega}(欧拉公式)\\
+\end{split}
+$$
+转换为标准 sinc 形式：$sinc(z)=\frac{\sin(\pi z)}{\pi z}$
+令$z=\frac{\omega\tau}{2\pi}$
+$$
+\frac{2\sin(\omega\tau/2)}{\omega}=\tau\frac{\sin(\omega\tau/2)}{\omega \tau / 2}=\tau\frac{\sin(\pi\frac{\omega\tau}{2\pi})}{\pi\frac{\omega\tau}{2\pi}}=\tau\cdot sinc(\frac{\omega\tau}{2\pi})
+$$
+## 正余弦信号
+### 变换对
+
+| 时域$x(t)$           | 频域$X(\omega)$                                            |
+| ------------------ | -------------------------------------------------------- |
+| $\cos(\omega_0 t)$ | $\pi[\delta(\omega-\omega_0)+\delta(\omega+\omega_0)]$   |
+| $\sin(\omega_0t)$  | $-j\pi[\delta(\omega-\omega_0)-\delta(\omega+\omega_0)]$ |
+### 推导
+这里利用 冲击函数的傅里叶变换+时移频移 性质有$e^{jk\omega_s t}\leftrightarrow2\pi\delta(\omega-k\omega_s)$，以及欧拉公式。这里就不展开了。
+
+
 # 傅里叶变换成立的条件
 
 # 卷积
 
-## 采样定理
+# 采样定理
 
 连续的信号在进行数字化时必须进行采样，那么问题就来了，每隔多久采样一次，信号才能完整的重建出来呢？
 
@@ -204,10 +504,26 @@ $$
 
 
 
-## 常见傅里叶变换对的推导
+TODO
 
-### 狄拉克梳状函数
+```
+采样定理
+负频率
+混叠
+理想低通滤波器
 
+信号恢复
 
-## 傅里叶变换中的困惑点
-### 为什么有负频率？
+- **数学推导细节**（比如 `fs > 2fm` 的严格证明）
+    
+- **DFT泄露的本质**（为什么非整数周期会泄露，栅栏效应）
+    
+- **sinc插值的工程实现**（截断、加窗、过采样）
+    
+- **带通采样定理**（如果你的信号是射频/通信类的）
+    
+- **量化误差与信噪比**（ADC的实际限制）
+  
+  最优检测器的证明
+
+```
