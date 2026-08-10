@@ -13,6 +13,11 @@ update: 2026-08-09
 这个交互式网站非常直观：
 	https://github.com/Jezzamonn/fourier
 	https://www.jezzamon.com/fourier/zh-cn.html
+
+其他参考 
+
+BV1za411F76U
+https://www.bilibili.com/video/BV1Vd4y1e7pj
 # 傅里叶变换是怎么想出来的
 
 这个视频值得一看：https://www.bilibili.com/video/BV1eUHjzgEAd
@@ -281,7 +286,7 @@ $$
 直流修正这里比较复杂，暂时先不计算
 
 **利用卷积**
-- 积分可以看作信号与阶跃函数的卷积[[../../TODO|TODO]]（放在卷积部分说明清楚）
+- 积分可以看作信号与阶跃函数的卷积，参考卷积部分
 - 时域卷积，频域相乘
 - 阶跃函数的傅里叶变换为$u(t)\leftrightarrow \pi\delta(\omega)+\frac{1}{j\omega}$（后面有介绍）
 利用以上性质有：
@@ -468,6 +473,83 @@ $$
 # 傅里叶变换成立的条件
 
 # 卷积
+卷积早期是服务概率论的，但是卷积+傅里叶变换在信号处理上非常有用。这里单独拎出来成立一个章节。
+
+## 积分可以看作信号与阶跃函数的卷积
+
+TODO
+
+## 卷积的基本性质
+傅里叶变换中卷积的性质可以简化计算：要计算时域卷积，可以先FFT变换到频域，频域相乘，在iFFT 变换回时域。这一波操做就将 $O(n^2)$ 复杂度的计算降低到$O(nlog(n))$
+
+### 时域卷积性质证明
+卷积定义：
+$$
+(x*y)(t)={\int_{-\infty}^{\infty}x(\tau)y(t-\tau)}d\tau
+$$
+傅里叶变为为
+$$
+\begin{split}
+\int_{-\infty}^\infty
+\left[ {\int_{-\infty}^{\infty}x(\tau)y(t-\tau)}d\tau\right]
+e^{-j\omega t}
+dt &=
+\int_{-\infty}^\infty x(\tau)
+\left[ 
+\int_{-\infty}^{\infty}
+y(t-\tau) e^{-j\omega t}
+dt
+\right]
+d\tau
+\end{split}
+$$
+令$u=t-\tau$，则$t=u+\tau,dt=du$:
+$$
+\begin{split}
+\int_{-\infty}^\infty x(\tau)
+\left[ 
+\int_{-\infty}^{\infty}
+y(u) e^{-j\omega (u+\tau)}
+du
+\right]
+d\tau&=\int_{-\infty}^\infty x(\tau)
+e^{-j\omega \tau}
+\left[ 
+\int_{-\infty}^{\infty}
+y(u) e^{-j\omega u}
+du
+\right]
+d\tau \\
+&=\int_{-\infty}^\infty x(\tau)
+e^{-j\omega \tau} Y(\omega)
+d\tau\\
+&=Y(\omega)
+\int_{-\infty}^\infty x(\tau) e^{-j\omega \tau}d\tau \\
+&=X(\omega)Y(\omega)
+\end{split}
+$$
+### 频域卷积定理
+直接从定义出发，计算$x(t)y(t)$的傅里叶变换为：
+$$
+\int_{-\infty}^{\infty}x(t)y(t)e^{-j\omega t}dt
+$$
+将$x(t)$用逆变换形式表示：$x(t)=\frac{1}{2\pi}\int_{-\infty}^\infty X(u)e^{jut}du$
+带入傅里叶变换公式有：
+$$
+\begin{split}
+\int_{-\infty}^{\infty}x(t)y(t)e^{-j\omega t}dt
+&=\int_{-\infty}^{\infty} 
+{\left[\frac{1}{2\pi}\int_{-\infty}^\infty X(u)e^{jut}du \right]}
+y(t)e^{-j\omega t}dt\\
+&=={\frac{1}{2\pi}}
+\int_{-\infty}^{\infty} X(u)
+{\left[\int_{-\infty}^\infty y(t)e^{-j(\omega-u) t} dt\right]}
+du\\
+&={\frac{1}{2\pi}}
+\int_{-\infty}^{\infty} X(u)Y(\omega -u)du\\
+&={\frac{1}{2\pi}}(X*Y)(\omega)
+\end{split}
+$$
 
 # 采样定理
 
