@@ -1,6 +1,6 @@
 ---
 type: note
-status: draft
+status: review
 tags:
   - camera
   - remosaic
