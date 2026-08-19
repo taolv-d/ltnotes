@@ -1,6 +1,6 @@
 ---
 type: note
-status: draft
+status: done
 tags:
   - 
 rating: 0

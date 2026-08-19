@@ -1,6 +1,6 @@
 ---
 type: note
-status: draft
+status: review
 tags:
   - computer
   - soc
@@ -597,7 +597,7 @@ SPI 版屏幕的接口定义如下，默认使用的**四线SPI模式** 注意�
 
 具体接法参考下面的：
 
-![image-20240714214926158](attachments/image-20240714214926158.png)
+![image-20240714214926158|640](attachments/image-20240714214926158.png)
 
 **测试接线SPI3**
 
