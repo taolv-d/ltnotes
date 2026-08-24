@@ -20,7 +20,7 @@
 - [[../ML&CV/nn积木/Bottleneck|Bottleneck]]
 - [[../ML&CV/nn积木/C2f|C2f]]
 - [[../ML&CV/nn积木/DSC 深度可分离卷积|DSC 深度可分离卷积]]
-- [[../ML&CV/nn积木/MultiBranchConvBlock|MultiBranchConvBlock]]
+- [[../ML&CV/nn积木/MultiBranchConvBlock (多分支卷积块)|MultiBranchConvBlock (多分支卷积块)]]
 - [[../ML&CV/nn积木/SE Squeeze-and-Excitation|SE Squeeze-and-Excitation]]
 - [[../ML&CV/nn积木/CoordinateAttention|CoordinateAttention]]
 - [[../ML&CV/nn积木/Neck|Neck]]

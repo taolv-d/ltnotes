@@ -1,17 +1,15 @@
 ---
 type: note
-status: draft
+status: review
 tags:
   - computer
   - tools
   - repo
 rating: 0
 create: 2026-05-12
-update:
+update: 2026-08-24
 ---
-
 这是一个24年9月的笔记，同步到我们新的仓库
-
 # git repo工具详细使用教程——彻底学会Android repo的使用
 
 ## repo是什么？
