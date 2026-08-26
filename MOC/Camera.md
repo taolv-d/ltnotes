@@ -27,7 +27,7 @@
 
 ## 色彩
 
-- [[../camera/optics/color/影视从业者对色彩的理解：Color science and digital image|Color science and digital image]]
+- [[../camera/optics/color/Color science and digital image（影视从业者对色彩的理解）|Color science and digital image]]
 - [[../camera/optics/color/2025 非黎曼空间色彩几何学|2025 非黎曼空间色彩几何学]]
 
 ## 图像质量问题

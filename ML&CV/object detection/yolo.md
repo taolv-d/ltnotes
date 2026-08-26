@@ -11,6 +11,9 @@ update:
 
 [[../../TODO|TODO]]
 # yolov8 detect
+
+![[attachments/Pasted image 20260826230418.png]]
+
 我们就从最经典、最适合入门的 YOLOv8 detect 讲起，也就是这个配置：ultralytics/cfg/models/v8/yolov8.yaml。你可以先把它理解成一句话：
 
 输入图片 -> 提取多尺度特征 -> 融合特征 -> 在3个尺度上预测框和类别
