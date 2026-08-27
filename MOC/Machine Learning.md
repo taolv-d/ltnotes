@@ -34,7 +34,7 @@
 
 - [[../ML&CV/loss指标/图像相关的深度学习 loss|图像相关的深度学习 loss]]
 - [[../ML&CV/loss指标/M-估计量|M-估计量]]
-- [[../ML&CV/loss指标/LPIPS|LPIPS]]
+- [[../ML&CV/loss指标/LPIPS, FID, MUSIQ|LPIPS, FID, MUSIQ]]
 - [[../ML&CV/正则化/正则化常用方法|正则化常用方法]]
 - [[../ML&CV/正则化/L1 L2 正则化|L1 L2 正则化]]
 

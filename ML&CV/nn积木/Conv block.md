@@ -1,54 +1,29 @@
 ---
 type: note
-status: draft
+status: done
 tags:
   - machine-learning
   - nn-block
   - conv
 rating: 0
 create: 2026-04-14
-update:
+update: 2026-08-27
 ---
-
 Conv block 通常包含三个部分：
 - Conv 卷积：提特征
-- BN 归一化：稳训练
-- Act 非线性：加入非线性表达能力
+- BN 归一化：稳训练（Batch Normalization）
+- Act 非线性：加入非线性表达能力（如ReLU）
+- 可选池化：如Max Pooling, avg Pooling
 
-BN 全名是 Batch Normalization。  
-它归一化的不是整个网络，也不是一整张图，而是：
-
-对每个通道，在一个 batch 上的特征值做标准化
-
-如果输入特征形状是：
-
-[batch, channel, height, width]
-
-那么 BN 会对每个通道单独统计：
-
-- 均值 mean
-- 方差 var
-
-然后把这个通道里的值变成大致“均值接近 0、方差接近 1”的分布。
-
-公式直觉上是：
-
-text
-
-`x_hat = (x - mean) / sqrt(var + eps) y = gamma * x_hat + beta`
-
+Batch Normalization 对每个通道，在一个 batch 上的特征值做标准化。
+1. 对每个通道单独统计均值标准差
+2. 通道归一化（均值为0，标准差1 的分布），稳定训练。
+也可以带上可学习的参数，例如：
+$$
+\begin{split}
+\hat{x} &= \frac{x - \bar{x}}{\sqrt{\sigma + \varepsilon}}\\
+y &= \gamma\hat{x} + \beta\\
+\end{split}
+$$
 前半段是标准化。  
-后半段 gamma 和 beta 是可学习参数，意思是：
-
-- 虽然我先把你拉回标准分布
-- 但网络可以自己决定要不要再缩放、再平移
-
-所以 BN 不是死板地“强行改数据”，而是：
-
-先规范一下分布，再给模型自由调回来
-
-它的好处你可以先记 3 个：
-
-- 训练更稳定
-- 学习率可以开得更大一些
-- 梯度传播更顺
+后半段 $\gamma$ 和 $\beta$ 是可学习参数，网络可以自己决定缩放平移
