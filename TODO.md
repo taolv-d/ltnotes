@@ -14,7 +14,6 @@ L4P: Towards Unified Low-Level 4D Vision Perception https://research.nvidia.com/
 - [ ] review deep learning 2015
 - [ ] 《YD/T 4066-2022 移动终端图像及视频防抖性能技术要求和测试方法》
 - [ ] MUSIQ 主管图像质量评分（给予transformer）：https://arxiv.org/abs/2108.05997
-
-
+- [ ] update tags
 
 
