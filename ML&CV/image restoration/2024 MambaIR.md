@@ -32,7 +32,7 @@ Mamba 主要用于图像分类的，因此专注于 high level 特征。IR 任�
 
 ## 通道注意力
 
-这里跟SE[[../nn积木/SE Squeeze-and-Excitation|SE Squeeze-and-Excitation]] 思想一致。原文没有展开介绍。
+这里跟SE[[../nn积木/SE Squeeze-and-Excitation (Channel Attention)|SE Squeeze-and-Excitation (Channel Attention)]] 思想一致。原文没有展开介绍。
 
 ## 感受野差异
 

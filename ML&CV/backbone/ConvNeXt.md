@@ -4,7 +4,6 @@ status: done
 tags:
   - backbone
   - attention
-  - conv
 rating: 0
 create: 2026-04-21
 update: 2026-08-28
