@@ -2,7 +2,6 @@
 type: note
 status: review
 tags:
-  - camera
   - sensor
   - noise
 rating: 0
