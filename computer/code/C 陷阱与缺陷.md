@@ -1,6 +1,6 @@
 ---
 type: note
-status: todo
+status: done
 tags:
   - computer
   - programming

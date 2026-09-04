@@ -37,5 +37,5 @@ url: https://www.scilit.com/publications/eab5666f942f7c79008f0064f5256a8d
  虽然 sony 说 分辨率要比QBC效果好，但最新的结果并不是这样，包括sony也推出了改进版本，即RB2x2OCL(LYTIA610)。
  - RB像素保持2x2OCL，提供对焦能力
  - G 每个pixel 一个OCL，来提高分辨率
- ![[attachments/Pasted image 20260816221245.png|480]]
+ ![[attachments/Pasted image 20260816221245.png|325]]
 

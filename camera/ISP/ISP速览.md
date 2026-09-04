@@ -1,8 +1,7 @@
 ---
 type: note
-status: todo
+status: draft
 tags:
-  - camera
   - isp
 rating: 0
 create: 2026-05-21
@@ -234,9 +233,9 @@ AE loop
 
 ## 其他
 
-| 平场  | ![](attachments/isp-overview-image-42.png)                               |
-| --- | ------------------------------------------------------------ |
-| 紫边  | ![](attachments/isp-overview-image-43.png)                               |
-| 畸变  | ![](attachments/isp-overview-image-44.png)                               |
+| 平场  | ![](attachments/isp-overview-image-42.png)                                           |
+| --- | ------------------------------------------------------------------------------------ |
+| 紫边  | ![](attachments/isp-overview-image-43.png)                                           |
+| 畸变  | ![](attachments/isp-overview-image-44.png)                                           |
 | 摩尔纹 | ![](attachments/isp-overview-image-45.png)![](attachments/isp-overview-image-46.png) |
 

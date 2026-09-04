@@ -2,8 +2,6 @@
 type: note
 status: todo
 tags:
-  - camera
-  - isp
   - awb
 rating: 0
 create: 2026-06-30
