@@ -13,7 +13,7 @@ ISP 标定主要包括以下这些方面：
 lsc 标定可以说是ISP中最重要的标定模块了（主要是广角，长焦影响小一点）。参考：[[LSC]]
 # AWB
 1. AWB 标定主要是补偿不同模组间的 R/G B/G 差异，**将所有模组对齐到golden**。标定通常也在D50光源下标定。
-2. 还有另外一个AWB 白点标定，通常是对golden模组进行的，参考：[[AWB/AWB calibration|AWB calibration]]
+2. 还有另外一个AWB 白点标定，通常是对golden模组进行的，参考：[[AWB/AWB|AWB]]
 # QSC
 QSC 主要针对 Quad bayer sensor 标定（[[../sensor/2019 QBC 2x2OCL sony|2019 QBC 2x2OCL sony]]）。主要是补偿四个小像素的灵敏度差异（sensor 自身有轻微差异，同时CRA，尤其广角，会在边缘引入灵敏度差异）
 ![[attachments/Pasted image 20260904232806.png|527]]
