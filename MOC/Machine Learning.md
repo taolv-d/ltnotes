@@ -27,8 +27,7 @@
 - [[../ML&CV/nn积木/SPPF|SPPF]]
 - [[../ML&CV/nn积木/RRDB|RRDB]]
 - [[../ML&CV/nn积木/FFN|FFN]]
-- [[../ML&CV/nn积木/激活函数汇总|激活函数汇总]]
-- [[../ML&CV/nn积木/Softplus|Softplus]]
+- [[../ML&CV/nn积木/Activation Function|Activation Function]]
 
 ## 损失、正则与指标
 

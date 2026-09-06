@@ -2,11 +2,10 @@
 type: note
 status: done
 tags:
-  - machine-learning
-  - nn-block
+  - ML
 rating: 0
 create: 2026-04-14
-update: 2026-09-04
+update: 2026-09-06
 ---
 # 经典激活函数
 ## sigmoid
@@ -44,7 +43,7 @@ $$ReLU(x) = max(0, x)$$
 $$\text{ReLU6}(x)=min⁡(max⁡(0,x),6)$$
 - **Leaky ReLU**: 给ReLU的负半轴一个很小的斜率（0.01），**缓解Dead ReLU问题**。不过实际表现不一定有效
 - **PReLU**: **负半轴斜率让网络学习**，有过拟合风险，大规模图像数据集有采用
-
+- **Softplus**: 是一个**平滑版的 ReLU**，公式是：$\text{Softplus}(x) = ln(1 + e_x)$，改进了ReLU 0 处的过渡。但是计算量更大，且负半轴会梯度消失（现在也不怎么用了）。
 ## ELU/GELU
 ![[attachments/Pasted image 20260903232128.png|443]]
 **ELU**（Exponential Linear Unit）

@@ -124,7 +124,7 @@ V3 的典型 block 是：
 其中 activation 可能是：
 
 - ReLU
-- h-swish [[../nn积木/激活函数汇总|激活函数汇总]]
+- h-swish [[../nn积木/Activation Function|Activation Function]]
 
 SE 不是每个 block 都有，是部分 block 有。[[../nn积木/SE Squeeze-and-Excitation (Channel Attention)|SE Squeeze-and-Excitation (Channel Attention)]]
 
