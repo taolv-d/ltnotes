@@ -2,9 +2,7 @@
 type: note
 status: draft
 tags:
-  - machine-learning
   - backbone
-  - cnn
 rating: 0
 create: 2026-04-21
 update:

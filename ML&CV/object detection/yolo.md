@@ -2,7 +2,6 @@
 type: note
 status: draft
 tags:
-  - machine-learning
   - object-detection
 rating: 0
 create: 2026-04-14
