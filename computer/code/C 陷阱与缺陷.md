@@ -2,8 +2,6 @@
 type: note
 status: done
 tags:
-  - computer
-  - programming
   - c
 rating: 0
 create: 2026-05-17

@@ -2,8 +2,7 @@
 type: note
 status: done
 tags:
-  - computer
-  - programming
+  - cpp
 rating: 0
 create: 2026-05-21
 update:
