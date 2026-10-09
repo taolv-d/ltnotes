@@ -11,6 +11,8 @@ update: 2026-08-26
 publish:
 url:
 ---
+本书原文：[[../../../files/camera/Color Science and Digital Imaging-dual.pdf|Color Science and Digital Imaging-dual]]
+
 本书是影视从业者（剪辑，特效）编写的一本介绍颜色科学的入门书，整体偏科普向。作者分五个方面介绍：**世界空间**（光学、人视觉介绍）、**相机空间**（相机成像）、**存储空间**（压缩、格式等）、**工作空间**（剪辑）、**显示空间**。本文整理值得记录的知识点（关注前两者）。
 # 世界空间
 

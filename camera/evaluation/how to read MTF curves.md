@@ -11,6 +11,10 @@ publish: 2022
 url: https://mmbiz.qpic.cn/mmbiz_jpg/s96aV4TVlROicjCMql0qsJeAq2LN6OKcNrDRwR8xVpoHsDlCUHVqztGvNWJNwp2tLic0QwYc1takAhrQ2fWt8lLw/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1
 update:
 ---
+本地pdf:
+[[../../files/camera/technical-article-how-to-read-mtf-curves-01.pdf|technical-article-how-to-read-mtf-curves-01]]
+[[../../files/camera/technical-article-how-to-read-mtf-curves-02.pdf|technical-article-how-to-read-mtf-curves-02]]
+
 蔡司的原文见：
 https://lenspire.zeiss.com/photo/app/uploads/2022/02/technical-article-how-to-read-mtf-curves-01.pdf
 https://lenspire.zeiss.com/photo/app/uploads/2022/02/technical-article-how-to-read-mtf-curves-02.pdf

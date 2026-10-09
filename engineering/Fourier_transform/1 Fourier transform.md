@@ -2,7 +2,6 @@
 type: note
 status: done
 tags:
-  - engineering
   - fourier-transform
 rating: 0
 create: 2026-06-09
