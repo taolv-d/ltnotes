@@ -1,5 +1,5 @@
 ---
-type: artical
+type: article
 status: done
 tags:
   - ML

@@ -1,11 +1,10 @@
 ---
-type: artical
+type: note
 status: todo
 tags:
   - light
 rating: 0
 create: 2026-06-16
-publish:
 url:
 update:
 ---

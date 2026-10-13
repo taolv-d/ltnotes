@@ -1,5 +1,5 @@
 ---
-type: artical
+type: article
 status: todo
 tags:
   - machine-learning
@@ -7,7 +7,7 @@ tags:
 rating: 0
 create: 2026-06-18
 publish: 2025
-url: 
+url:
 update:
 ---
-
+[[../../TODO|TODO]]

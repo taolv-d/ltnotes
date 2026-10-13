@@ -1,5 +1,5 @@
 ---
-type: artical
+type: article
 status: done
 tags:
   - machine-learning
@@ -8,7 +8,7 @@ tags:
 rating: 0
 create: 2026-05-09
 publish: 2025
-url: 
+url:
 update:
 ---
 
