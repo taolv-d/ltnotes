@@ -4,6 +4,7 @@ status: review
 tags:
   - sensor
   - noise
+  - hdr
 rating: 0
 create: 2026-05-21
 update: 2026-08-30

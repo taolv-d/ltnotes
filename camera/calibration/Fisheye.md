@@ -1,0 +1,117 @@
+---
+type: note
+status: draft
+tags:
+  - 
+rating: 0
+create: 2026-09-06
+update:
+---
+摘自 https://zhuanlan.zhihu.com/p/511284263
+鱼眼镜头设计的目的是要拍摄大的视野，鱼眼镜头的[视场角](https://zhida.zhihu.com/search?content_id=201750940&content_type=Article&match_order=1&q=%E8%A7%86%E5%9C%BA%E8%A7%92&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTMzNzE5ODgsInEiOiLop4blnLrop5IiLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoyMDE3NTA5NDAsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.HnaVUNytGt5kI6mSVp2P2qW8DXYOT4UlwbNp99lNfXw&zhida_source=entity)可达到180-270度，在工程上视角超过140度的镜头被统称为鱼眼镜头。这是因为普通针孔相机视野太小，满足不了一些特别的需求。
+
+为什么[针孔相机](https://zhida.zhihu.com/search?content_id=201750940&content_type=Article&match_order=2&q=%E9%92%88%E5%AD%94%E7%9B%B8%E6%9C%BA&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTMzNzE5ODgsInEiOiLpkojlrZTnm7jmnLoiLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoyMDE3NTA5NDAsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MiwiemRfdG9rZW4iOm51bGx9.RfvukoQZmGZC81x40VpDbEHKHm02l4Owpe9P3hNJXN4&zhida_source=entity)达不到这么大的视场角呢？因为针孔相机模型是[相似性投影](https://zhida.zhihu.com/search?content_id=201750940&content_type=Article&match_order=1&q=%E7%9B%B8%E4%BC%BC%E6%80%A7%E6%8A%95%E5%BD%B1&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTMzNzE5ODgsInEiOiLnm7jkvLzmgKfmipXlvbEiLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoyMDE3NTA5NDAsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.vX1fF7ddJ8Hu54dpNwmtz8jZsKfS-vAgxlgUxoe-sSo&zhida_source=entity)，实际场景中的直线仍被投影成图像面上的直线。假如使用针孔相机模型达到180度的视场角，那么这种情况下的图像会变为无穷大。
+
+![](https://pic1.zhimg.com/v2-a9bdd741bdff0faba357e7a80c5a1bc2_1440w.jpg)
+
+那么怎么设计才能达到这种大视场角的效果？
+
+为了将尽可能大的场景投影到有限的图像平面内，鱼眼相机将相机畸变列为其成像特征用以在有限的图像平面内表达本应落在无穷远处的空间点投影。
+
+鱼眼镜头设计采用[非相似性成像](https://zhida.zhihu.com/search?content_id=201750940&content_type=Article&match_order=1&q=%E9%9D%9E%E7%9B%B8%E4%BC%BC%E6%80%A7%E6%88%90%E5%83%8F&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTMzNzE5ODgsInEiOiLpnZ7nm7jkvLzmgKfmiJDlg48iLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoyMDE3NTA5NDAsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.36jdAeWLQRdne3HIpsK-0SauV0O5qIW5b0yBVbPuGL0&zhida_source=entity)，在成像过程中引入畸变，引入畸变的作用是通过对直径空间的压缩，突破成像视角的局限，从而达到广角成像。
+
+鱼眼镜头是为了大视野，自动放弃了相似性成像，选择非相似性成像。因此经入射光线经过镜头之后射向[成像面](https://zhida.zhihu.com/search?content_id=201750940&content_type=Article&match_order=1&q=%E6%88%90%E5%83%8F%E9%9D%A2&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTMzNzE5ODgsInEiOiLmiJDlg4_pnaIiLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoyMDE3NTA5NDAsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.dd40GfY88LQqwrt1depFKGmUNJNk7lGrrhwrAaCPKP0&zhida_source=entity)，其出射角一定是要小于入射角的。
+
+![](https://pic3.zhimg.com/v2-8e51a0bd821f8cfe74857bc9ac5ec8be_1440w.jpg)
+
+fisheye projection model
+
+因此设计出了鱼眼镜头。
+
+鱼眼镜头是由十几个不同的[透镜](https://zhida.zhihu.com/search?content_id=201750940&content_type=Article&match_order=1&q=%E9%80%8F%E9%95%9C&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTMzNzE5ODgsInEiOiLpgI_plZwiLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoyMDE3NTA5NDAsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.o9VkIl2kdtavffZvWjLDCyQIJF6s9vskl7K_kgI0fno&zhida_source=entity)组合而成的，在成像过程中，入射光线经过不同程度的折射，投影到尺寸有限的成像平面上，使得鱼眼镜头与普通镜头相比拥有更大的视野。
+
+结构中前面的类似凸的镜头发生折射，使入射角减小，其余镜头相当于一个[成像镜头](https://zhida.zhihu.com/search?content_id=201750940&content_type=Article&match_order=1&q=%E6%88%90%E5%83%8F%E9%95%9C%E5%A4%B4&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTMzNzE5ODgsInEiOiLmiJDlg4_plZzlpLQiLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoyMDE3NTA5NDAsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.1HCVmnYQo0TjPm2gFe7HOzpHnBBbYbj1_eoG1aJ8rrk&zhida_source=entity)。
+
+![](https://pic4.zhimg.com/v2-4f827dfb6a61425e0ab3c697c19f7be7_1440w.jpg)
+
+## **2.鱼眼相机成像模型？**
+
+鱼眼相机成像模型近似为[单位球面投影模型](https://zhida.zhihu.com/search?content_id=201750940&content_type=Article&match_order=1&q=%E5%8D%95%E4%BD%8D%E7%90%83%E9%9D%A2%E6%8A%95%E5%BD%B1%E6%A8%A1%E5%9E%8B&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTMzNzE5ODgsInEiOiLljZXkvY3nkIPpnaLmipXlvbHmqKHlnosiLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoyMDE3NTA5NDAsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.JL7eD3oiG_PtShDeecALFaCuYXDEs-krDijABPxuQIU&zhida_source=entity)。
+
+一般将鱼眼相机成像过程分解成两步：先将[三维空间](https://zhida.zhihu.com/search?content_id=201750940&content_type=Article&match_order=1&q=%E4%B8%89%E7%BB%B4%E7%A9%BA%E9%97%B4&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTMzNzE5ODgsInEiOiLkuInnu7Tnqbrpl7QiLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoyMDE3NTA5NDAsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.UaOpSyCXyjGxkhSE8pTMtAkj-1BCKtsMFVSx7Z566tY&zhida_source=entity)点线性的投影到虚拟单位球面上；随后将单位球面上的点投影到图像平面上，这个过程是非线性的。
+
+![](https://pic4.zhimg.com/v2-1acd4456620be2a0caae8b2c9cc131d9_1440w.jpg)
+
+鱼眼相机的设计引入了畸变，因此鱼眼相机所成影像存在畸变，其中径向畸变非常严重，因此其畸变模型主要考虑[径向畸变](https://zhida.zhihu.com/search?content_id=201750940&content_type=Article&match_order=2&q=%E5%BE%84%E5%90%91%E7%95%B8%E5%8F%98&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTMzNzE5ODgsInEiOiLlvoTlkJHnlbjlj5giLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoyMDE3NTA5NDAsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MiwiemRfdG9rZW4iOm51bGx9.tfGwmnIb-BOkhgId4nFi3eIYrLUON2ZN1wEYH2vSD_8&zhida_source=entity)。
+
+鱼眼相机的[投影函数](https://zhida.zhihu.com/search?content_id=201750940&content_type=Article&match_order=1&q=%E6%8A%95%E5%BD%B1%E5%87%BD%E6%95%B0&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTMzNzE5ODgsInEiOiLmipXlvbHlh73mlbAiLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoyMDE3NTA5NDAsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.H3HEKuB_EVyJ2vX64UVT36Aeo9OCz6YdSvmgLPmdDVA&zhida_source=entity)是为了尽可能将庞大的场景投影到有限的图像平面所设计的。根据投影函数的不同将鱼眼相机的设计模型大致分为等距投影模型、[等立体角投影模型](https://zhida.zhihu.com/search?content_id=201750940&content_type=Article&match_order=1&q=%E7%AD%89%E7%AB%8B%E4%BD%93%E8%A7%92%E6%8A%95%E5%BD%B1%E6%A8%A1%E5%9E%8B&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTMzNzE5ODgsInEiOiLnrYnnq4vkvZPop5LmipXlvbHmqKHlnosiLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoyMDE3NTA5NDAsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.GPYUCe9eufsT27Dys9WaSGTqNATlytGcPXPikBdIcN0&zhida_source=entity)、正交投影模型和[体视投影模型](https://zhida.zhihu.com/search?content_id=201750940&content_type=Article&match_order=1&q=%E4%BD%93%E8%A7%86%E6%8A%95%E5%BD%B1%E6%A8%A1%E5%9E%8B&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTMzNzE5ODgsInEiOiLkvZPop4bmipXlvbHmqKHlnosiLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoyMDE3NTA5NDAsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.ZdHrI9ImRJXFwRo2CfRfBUeRWJfVWBhbyIk-Scc0QSc&zhida_source=entity)四种。相机的成像模型实际上表征的是成像的像高与入射角之间的[映射](https://zhida.zhihu.com/search?content_id=201750940&content_type=Article&match_order=1&q=%E6%98%A0%E5%B0%84&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTMzNzE5ODgsInEiOiLmmKDlsIQiLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoyMDE3NTA5NDAsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.uBLZxMmJLZfAqjiyzvj_KSXBRdYKkfSf_zovCy9oVX0&zhida_source=entity)关系。
+
+那么鱼眼相机模型是如何将空间中的一点P投影到球面上，进而投影到图像平面上的。
+
+### **2.1 [针孔投影](https://zhida.zhihu.com/search?content_id=201750940&content_type=Article&match_order=1&q=%E9%92%88%E5%AD%94%E6%8A%95%E5%BD%B1&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTMzNzE5ODgsInEiOiLpkojlrZTmipXlvbEiLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoyMDE3NTA5NDAsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.-HigEr6dcpzWZw7BqQTI8Q5IxR1GaVKL_DP9Y0P_SnQ&zhida_source=entity)模型**
+
+针孔投影模型为相似性投影模型，其满足物点、成像中心、像点的共线关系，其[理想成像](https://zhida.zhihu.com/search?content_id=201750940&content_type=Article&match_order=1&q=%E7%90%86%E6%83%B3%E6%88%90%E5%83%8F&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTMzNzE5ODgsInEiOiLnkIbmg7PmiJDlg48iLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoyMDE3NTA5NDAsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.yhoJPiev6vHEwVsbk0LI8n0j_M3WFmp72ypJOU5_ijw&zhida_source=entity)公式为：
+
+![](https://picx.zhimg.com/v2-4d3656f6c7a293968371af7f7b9e097b_1440w.jpg)
+
+![](https://pic2.zhimg.com/v2-54e5d7718aaf92eaa0e8e407aa7394f3_1440w.jpg)
+
+### **2.2 等距投影模型**
+
+等距投影模型的投影关系在入射光线之间的角度相同时，保持其对应各[投影点](https://zhida.zhihu.com/search?content_id=201750940&content_type=Article&match_order=1&q=%E6%8A%95%E5%BD%B1%E7%82%B9&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTMzNzE5ODgsInEiOiLmipXlvbHngrkiLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoyMDE3NTA5NDAsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.e0y-3LjsR-A6lWklwhUiIz9KEIYIgm2q7ojoY71SdEo&zhida_source=entity)之间的间距相同。其投影模型为：
+
+![](https://pic4.zhimg.com/v2-a23faf24d6d43882023d8d6672e9ddb5_1440w.png)
+
+rd表示图像中点到畸变中心的距离，即成像高度；f为鱼眼相机的[焦距](https://zhida.zhihu.com/search?content_id=201750940&content_type=Article&match_order=1&q=%E7%84%A6%E8%B7%9D&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTMzNzE5ODgsInEiOiLnhKbot50iLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoyMDE3NTA5NDAsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.hlKawUry0NR3g1sKhxCgXXyAMPZo88YlRatlK5tZRNg&zhida_source=entity)，θ是入射光线与鱼眼相机[光轴](https://zhida.zhihu.com/search?content_id=201750940&content_type=Article&match_order=1&q=%E5%85%89%E8%BD%B4&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTMzNzE5ODgsInEiOiLlhYnovbQiLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoyMDE3NTA5NDAsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.HW2rjjGHJrAf6m5r3335uSN5MgZnSrIrxEqXNOExgaU&zhida_source=entity)之间的夹角，即入射角。
+
+![](https://pic2.zhimg.com/v2-7c6dd9ebb50018889bf163b6d4874281_1440w.jpg)
+
+![](https://pica.zhimg.com/v2-96607bf548d0a18d28f26c2e7b15151a_1440w.jpg)
+
+### **2.3 等立体角投影模型**
+
+等立体角的特点是相等立体角的入射面会产生相等面积的像，其畸变程度介于等距模型与正交模型之间。其模型如下：
+
+  
+
+![](https://pic2.zhimg.com/v2-8c92e3a68e2d3a65183c7b9c7992eaef_1440w.jpg)
+
+![](https://pic4.zhimg.com/v2-6076093f0a80b279adb1fb76d971fc11_1440w.jpg)
+
+### **2.4 正交投影模型**
+
+正交投影模型的畸变很大，近180度处的图像信息几乎全部丢失，且180度之外的场景区域将无法进行描述。采用这种模型的镜头拍出的图片即使在视角较小的区域也会比其他模型镜头的畸变更明显。因此，针对艺术摄影类的[广角镜头](https://zhida.zhihu.com/search?content_id=201750940&content_type=Article&match_order=1&q=%E5%B9%BF%E8%A7%92%E9%95%9C%E5%A4%B4&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTMzNzE5ODgsInEiOiLlub_op5LplZzlpLQiLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoyMDE3NTA5NDAsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.6ETxzMaFFPAVTBBK7IMqvfrCRhnI0uohoXmRiD5NPx4&zhida_source=entity)，该模型的校正效果更好。其模型如下：
+
+![](https://pic2.zhimg.com/v2-083a1bfc87755eb6f9dbb7bfa40d0153_1440w.jpg)
+
+![](https://pic3.zhimg.com/v2-74a479a48d5dde5848488445fc7ec528_1440w.jpg)
+
+### **2.5 体视投影模型**
+
+体视模型相比之下畸变最小，球形物面上的微小[面元](https://zhida.zhihu.com/search?content_id=201750940&content_type=Article&match_order=1&q=%E9%9D%A2%E5%85%83&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTMzNzE5ODgsInEiOiLpnaLlhYMiLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoyMDE3NTA5NDAsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.mHg-_aE5gPv-jzC2REw-tL4OzpuX229Ndnx8eMAVBqg&zhida_source=entity)经过体视投影后，其像仍然是一个小圆。所以体视投影对微小物体成像有相似性。但正是这种成像的相似性，使得该[投影方式](https://zhida.zhihu.com/search?content_id=201750940&content_type=Article&match_order=1&q=%E6%8A%95%E5%BD%B1%E6%96%B9%E5%BC%8F&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTMzNzE5ODgsInEiOiLmipXlvbHmlrnlvI8iLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoyMDE3NTA5NDAsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.4p311wXzUh-VkcGBgSar8cmoCvBAtaAkWJUIkNfEgnQ&zhida_source=entity)不能提供足够的[桶形畸变](https://zhida.zhihu.com/search?content_id=201750940&content_type=Article&match_order=1&q=%E6%A1%B6%E5%BD%A2%E7%95%B8%E5%8F%98&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTMzNzE5ODgsInEiOiLmobblvaLnlbjlj5giLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoyMDE3NTA5NDAsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.w8eEvmzWad1UWKljkuvwCImJpqe7jQ6RxE5d9kVuXMo&zhida_source=entity)，影响成像视场。其模型如下：
+
+![](https://pic4.zhimg.com/v2-2be7aa369618dc100179c48ae79144ff_1440w.jpg)
+
+![](https://pic2.zhimg.com/v2-27b8f2d971fb1d9b859f19f773f62b99_1440w.jpg)
+
+### **2.6 几种投影模型的区别**
+
+四种畸变模型[畸变量](https://zhida.zhihu.com/search?content_id=201750940&content_type=Article&match_order=1&q=%E7%95%B8%E5%8F%98%E9%87%8F&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTMzNzE5ODgsInEiOiLnlbjlj5jph48iLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoyMDE3NTA5NDAsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.thM7LojMHW9mmOLzRdRrdvVMx0HyKZM48e3WnQgehS0&zhida_source=entity)从大到小依次为：正交投影、等立体角投影、等距投影、体视投影。由于等距投影模型便于计算，因此被各大工程广泛应用。
+
+![](https://pica.zhimg.com/v2-0df01cc6ded0f5106192a576d8e62e48_1440w.jpg)
+
+## 3. **通用鱼眼相机模型-[Kannala-Brandt 模型](https://zhida.zhihu.com/search?content_id=201750940&content_type=Article&match_order=1&q=Kannala-Brandt+%E6%A8%A1%E5%9E%8B&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTMzNzE5ODgsInEiOiJLYW5uYWxhLUJyYW5kdCDmqKHlnosiLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoyMDE3NTA5NDAsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.0WSFUzaVGmehwvKvb3TI8OZ3qAQyddDFF_TwrGCJAtw&zhida_source=entity)**
+
+[鱼眼镜头](https://zhida.zhihu.com/search?content_id=201750940&content_type=Article&match_order=10&q=%E9%B1%BC%E7%9C%BC%E9%95%9C%E5%A4%B4&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTMzNzE5ODgsInEiOiLpsbznnLzplZzlpLQiLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoyMDE3NTA5NDAsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MTAsInpkX3Rva2VuIjpudWxsfQ.DSHzf_r-JqrNauWh695-s6-W3Kq4YcRptChHz94fIZo&zhida_source=entity)生产过程中不可能精确地按照投影模型来设计，所以为了方便鱼眼相机的标定，Kannala-Brandt提出了一种鱼眼相机的一般[多项式近似](https://zhida.zhihu.com/search?content_id=201750940&content_type=Article&match_order=1&q=%E5%A4%9A%E9%A1%B9%E5%BC%8F%E8%BF%91%E4%BC%BC&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTMzNzE5ODgsInEiOiLlpJrpobnlvI_ov5HkvLwiLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoyMDE3NTA5NDAsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.xlg7tpM2isc5MiAZoWO4vpWuSt1eglNIh_xqRwyO6fM&zhida_source=entity)模型。通过前面四个模型，可以发现θd是theta的[奇函数](https://zhida.zhihu.com/search?content_id=201750940&content_type=Article&match_order=1&q=%E5%A5%87%E5%87%BD%E6%95%B0&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTMzNzE5ODgsInEiOiLlpYflh73mlbAiLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoyMDE3NTA5NDAsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.mNpCdMx5kx0BdF4oquJCyZnuzBx1ybBDjlVmdMIg1yM&zhida_source=entity)，将这些式子按[泰勒级数](https://zhida.zhihu.com/search?content_id=201750940&content_type=Article&match_order=1&q=%E6%B3%B0%E5%8B%92%E7%BA%A7%E6%95%B0&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTMzNzE5ODgsInEiOiLms7Dli5LnuqfmlbAiLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoyMDE3NTA5NDAsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9._vYHECP8JfQT_HR9RvuJd2BsNHwJdxDwyfrQhOwXYxc&zhida_source=entity)展开，发现θd用θ的[奇次多项式](https://zhida.zhihu.com/search?content_id=201750940&content_type=Article&match_order=1&q=%E5%A5%87%E6%AC%A1%E5%A4%9A%E9%A1%B9%E5%BC%8F&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTMzNzE5ODgsInEiOiLlpYfmrKHlpJrpobnlvI8iLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoyMDE3NTA5NDAsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.F9wIaWxVyG_yubpFtWAq8joWIgZFSNTAtE277oPqrzI&zhida_source=entity)表示，即
+
+![](https://pic4.zhimg.com/v2-1b2194070cb0a48052b43ad05f85d20d_1440w.png)
+
+取前5项，给出了足够的自由度来很好的近似各种投影模型。
+
+![](https://pic2.zhimg.com/v2-26548d33abdccf095941b768ed07a377_1440w.png)
+
+上式是根据四种鱼眼相机投影模型得出的一种通用鱼眼相机[多项式模型](https://zhida.zhihu.com/search?content_id=201750940&content_type=Article&match_order=1&q=%E5%A4%9A%E9%A1%B9%E5%BC%8F%E6%A8%A1%E5%9E%8B&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3OTMzNzE5ODgsInEiOiLlpJrpobnlvI_mqKHlnosiLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoyMDE3NTA5NDAsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.oCuVpFE5s0hvg4uWxMKOMkWP3PwEfmeYBtM9W1tfiaU&zhida_source=entity)。
+
+这种模型可以通过θ得到θd，通过无畸变图像中的点能够计算出鱼眼图像中的畸变点。
+
+OpenCV中鱼眼相机标定方法就是用的这种KB模型。

@@ -17,4 +17,9 @@ L4P: Towards Unified Low-Level 4D Vision Perception https://research.nvidia.com/
 - [ ] update tags
 - [ ] Adam 优化器
 
-
+- [ ] 微软：Overview of the HEVC standard
+- [ ] Comparsion of the Coding Efficiency of Video Coding Standards include HEVC
+- [ ] MIT H.265-HEVC tutorial-2014-ISCAS
+- [ ] 一文详解分析鱼眼相机投影成像模型和畸变模型
+- [x] Nikon CCD noise Sources
+- [x] Kodak CCD Image Sensor Noise Sources

@@ -2,10 +2,9 @@
 type: note
 status: done
 tags:
-  - camera
   - sensor
   - adc
-rating: 0
+rating: -3
 create: 2026-05-17
 update: 2026-06-23
 ---

@@ -2,8 +2,6 @@
 type: note
 status: done
 tags:
-  - camera
-  - sensor
   - cmos
 rating: 0
 create: 2026-05-21
