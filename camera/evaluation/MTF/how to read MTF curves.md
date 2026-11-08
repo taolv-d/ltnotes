@@ -2,8 +2,6 @@
 type: article
 status: done
 tags:
-  - camera
-  - evaluation
   - mtf
 rating: 0
 create: 2026-05-17
@@ -12,8 +10,8 @@ url: https://mmbiz.qpic.cn/mmbiz_jpg/s96aV4TVlROicjCMql0qsJeAq2LN6OKcNrDRwR8xVpo
 update:
 ---
 本地pdf:
-[[../../files/camera/technical-article-how-to-read-mtf-curves-01.pdf|technical-article-how-to-read-mtf-curves-01]]
-[[../../files/camera/technical-article-how-to-read-mtf-curves-02.pdf|technical-article-how-to-read-mtf-curves-02]]
+[[../../../files/camera/technical-article-how-to-read-mtf-curves-01.pdf|technical-article-how-to-read-mtf-curves-01]]
+[[../../../files/camera/technical-article-how-to-read-mtf-curves-02.pdf|technical-article-how-to-read-mtf-curves-02]]
 
 蔡司的原文见：
 https://lenspire.zeiss.com/photo/app/uploads/2022/02/technical-article-how-to-read-mtf-curves-01.pdf

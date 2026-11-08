@@ -24,6 +24,6 @@ PSF 是点扩散函数，我们的镜头就是一个低通滤波器，它的特�
 不过在特定领域有很多突破PSF 物理限制的方法。
 
 相关链接：
-MTF [[../evaluation/MTF|MTF]]
+MTF [[../evaluation/MTF/MTF|MTF]]
 利用PSF提升清晰度 [[../deblur/基于PSF的去模糊|基于PSF的去模糊]]
 衍射极限 [[Diffraction limit]]

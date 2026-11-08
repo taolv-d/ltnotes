@@ -118,7 +118,7 @@ a 粗胚 b 抽氧 c 充氮气 d 加热软化玻璃 e 加压 f 脱模
 ![[attachments/2024-01-07-16-06-09-image.png|551]]
 ## MTF
 点扩散函数 PSF 见 [[PSF]]
-MTF 见 [[../evaluation/MTF|MTF]]
+MTF 见 [[../evaluation/MTF/MTF|MTF]]
 ## 光学像差
 [[Optical aberration]]
 畸变 [[distortion]]
