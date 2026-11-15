@@ -11,6 +11,8 @@ update:
 # demoniac 处理
 一种方法是对 raw 图做 demoniac，但是demoniac 算法本身也会影响清晰度。例如最简单的双线性插值往往会引入模糊，造成测试结果低于真实结果。这篇文章^[https://ieeexplore.ieee.org/abstract/document/10742328] 评估了双线性插值，发现：
 >**双线性插值会显著压低 SFR，且在所有测试算法中通常是最低的**；它的 SFR50 比 Bayer 基准低约 33%，SFR@Ny 只有 Bayer 的一半左右。
+![[attachments/Pasted image 20261108205838.png]]
+![[attachments/Pasted image 20261108205934.png]]
 # raw 域直接算
 另外一种方法是在稀疏 raw 图（只取某一通道）上计算。这篇文章介绍了了一种实践方案^[https://ui.adsabs.harvard.edu/link_gateway/2018JOSAA..35..442V/doi:10.1364/JOSAA.35.000442] 。文章给出两个改进点：
 1. 低于畸变，直接用曲线拟合，不用做畸变校正（或图卡的补偿）。图中展示的实线对应直接直线拟合的结果，由于边缘错位，得到的结果会更模糊。
